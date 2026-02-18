@@ -1571,12 +1571,15 @@ img {
 }
 
 .videos-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
 .video-card {
+  flex: 1 1 300px;
+  max-width: 400px;
   background: var(--dark-surface);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -1592,7 +1595,7 @@ img {
 
 .video-wrap {
   position: relative;
-  aspect-ratio: 16/9;
+  aspect-ratio: 9/16;
   background: #000;
   overflow: hidden;
   cursor: pointer;
@@ -1716,10 +1719,4 @@ img {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, .55);
   line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .videos-grid {
-    grid-template-columns: 1fr;
-  }
 }
