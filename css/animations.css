@@ -1,0 +1,329 @@
+/* ============================================================
+   VERZA DESIGN — Animations & Keyframes
+   ============================================================ */
+
+/* ── Keyframes ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 200;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(0.7);
+    }
+}
+
+@keyframes waPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    70% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes heroTextIn {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) skewY(3deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) skewY(0deg);
+    }
+}
+
+@keyframes badgePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) rotate(-5deg);
+    }
+
+    70% {
+        transform: scale(1.05) rotate(1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* ── Hero Entrance Animations ── */
+.hero-content h1 {
+    animation: heroTextIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.hero-subtitle {
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+.hero-ctas {
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+.hero-scroll {
+    animation: fadeIn 1s ease 1.2s both;
+}
+
+/* ── Section Label Animation ── */
+.section-label {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Nosotras Badge ── */
+.nosotras-badge {
+    animation: badgePop 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+/* ── Service Cards Stagger ── */
+.service-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.service-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.service-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+/* ── Portfolio Item Hover ── */
+.portfolio-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ── Floating Decoration ── */
+.float-deco {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ── Shimmer Loading Effect ── */
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% auto;
+    animation: shimmer 1.5s linear infinite;
+}
+
+/* ── Parallax Container ── */
+.parallax-section {
+    overflow: hidden;
+}
+
+.parallax-bg {
+    will-change: transform;
+    transform-origin: center center;
+}
+
+/* ── Stat Counter Animation ── */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item.revealed .stat-number {
+    animation: countUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── SVG Pencil Stroke ── */
+.nav-link .nav-underline path {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover .nav-underline path {
+    stroke-dashoffset: 0;
+}
+
+/* ── Before/After Slider Handle Pulse ── */
+@keyframes handlePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(26, 63, 196, .4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(26, 63, 196, 0);
+    }
+}
+
+.ba-handle-circle {
+    animation: handlePulse 2s ease-in-out infinite;
+}
+
+/* ── Mobile Menu Slide ── */
+@keyframes menuSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.open {
+    animation: menuSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Testimonial Card Hover ── */
+.testimonial-card {
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* ── Form Focus Glow ── */
+.form-group input:focus,
+.form-group textarea:focus {
+    animation: none;
+}
+
+/* ── WhatsApp Pulse ── */
+#whatsapp-fab::before {
+    animation: waPulse 2.5s ease-out infinite;
+}
+
+/* ── Stats Section ── */
+.stats-row {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--royal-blue);
+    line-height: 1;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+}

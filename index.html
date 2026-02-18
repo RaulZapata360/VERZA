@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verza Design — Diseño de Interiores & Arquitectura de Eventos | Barranquilla</title>
+  <meta name="description"
+    content="Verza Design: estudio de diseño de interiores y arquitectura de eventos en Barranquilla. Diseño, Cercanía y Profesionalismo." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body>
+
+  <!-- ── Custom Cursor ── -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ── Mobile Menu ── -->
+  <nav id="mobile-menu" class="mobile-menu" role="navigation" aria-label="Menú móvil">
+    <a href="#inicio" class="nav-link">Inicio</a>
+    <a href="#nosotras" class="nav-link">Nosotras</a>
+    <a href="#servicios" class="nav-link">Servicios</a>
+    <a href="#portafolio" class="nav-link">Portafolio</a>
+    <a href="#contacto" class="nav-link">Contacto</a>
+    <a href="#contacto" class="btn btn-primary" style="margin-top:1rem;">Agendar Diagnóstico</a>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════ -->
+  <header id="header" class="hero-mode" role="banner">
+    <!-- Logo -->
+    <a href="#inicio" class="header-logo" aria-label="Verza Design - Inicio">
+      <div class="logo-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      </div>
+      <span>Verza Design</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="nav-links" role="list">
+      <li>
+        <a href="#inicio" class="nav-link" data-section="inicio">
+          Inicio
+          <svg class="nav-underline" viewBox="0 0 80 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 5 Q20 2 40 5 Q60 8 78 4" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#nosotras" class="nav-link" data-section="nosotras">
+          Nosotras
+          <svg class="nav-underline" viewBox="0 0 80 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 5 Q20 2 40 5 Q60 8 78 4" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#servicios" class="nav-link" data-section="servicios">
+          Servicios
+          <svg class="nav-underline" viewBox="0 0 80 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 5 Q20 2 40 5 Q60 8 78 4" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#portafolio" class="nav-link" data-section="portafolio">
+          Portafolio
+          <svg class="nav-underline" viewBox="0 0 80 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 5 Q20 2 40 5 Q60 8 78 4" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#contacto" class="nav-link" data-section="contacto">
+          Contacto
+          <svg class="nav-underline" viewBox="0 0 80 8" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 5 Q20 2 40 5 Q60 8 78 4" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <!-- CTA + Hamburger -->
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="#contacto" class="btn btn-primary" style="padding:10px 22px;font-size:.8rem;display:none;"
+        id="header-cta">Agendar Diagnóstico</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════ -->
+    <section id="inicio" aria-label="Sección principal">
+      <div id="hero">
+        <div class="hero-bg parallax-bg" role="img"
+          aria-label="Verza Design — Camila G. y Camila E. en sesión de foto con materiales y colores"
+          style="background-image: url('Galeria/Imagenes/Hero 01.jpg');"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div class="section-label"
+            style="color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);margin-bottom:1.5rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            Barranquilla, Colombia
+          </div>
+
+          <h1>
+            Tu espacio,<br>
+            tu <em class="handwritten">esencia.</em>
+          </h1>
+
+          <p class="hero-subtitle">
+            Diseño de interiores y arquitectura de eventos exclusivos en Barranquilla. Creamos atmósferas que cuentan tu
+            historia.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#portafolio" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+              Ver Proyectos
+            </a>
+            <a href="#nosotras" class="btn btn-outline">
+              Conoce nuestra historia
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         NOSOTRAS
+    ════════════════════════════════════════ -->
+    <section id="nosotras" aria-labelledby="nosotras-heading">
+      <div class="container">
+        <div class="nosotras-grid">
+
+          <!-- Image -->
+          <div class="nosotras-image-wrap reveal-left">
+            <!-- Decorative SVG -->
+            <svg class="nosotras-deco" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5"
+              aria-hidden="true">
+              <circle cx="50" cy="50" r="45" stroke-dasharray="6 4" />
+              <path d="M20 50 Q50 20 80 50 T20 80" stroke-dasharray="4 3" />
+            </svg>
+
+            <div class="img-frame">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85"
+                alt="Camila G. y Camila E. — fundadoras de Verza Design en su estudio" loading="lazy" />
+            </div>
+
+            <!-- Badge -->
+            <div class="nosotras-badge" aria-label="5 años de experiencia">
+              <span class="badge-num">5+</span>
+              <span class="badge-text">Años de<br>experiencia</span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="nosotras-content reveal-right">
+            <div class="section-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+              </svg>
+              Las Fundadoras
+            </div>
+
+            <h2 id="nosotras-heading">
+              Detrás de<br><em class="handwritten">Verza Design</em>
+            </h2>
+
+            <blockquote class="nosotras-quote">
+              "Somos 2 diseñadoras con personalidades opuestas, pero con la misma pasión, honestidad y buena <em
+                class="handwritten">vibra.</em>"
+            </blockquote>
+
+            <p class="nosotras-text">
+              Somos 2 diseñadoras de espacios que hace cinco años decidimos unir nuestras ideas, nuestros sueños y
+              nuestra pasión por crear. Juntas construimos <strong>Verza Design</strong>, un estudio donde el diseño se
+              vive con <em class="handwritten">creatividad,</em> honestidad y buena vibra.
+            </p>
+
+            <p class="nosotras-text">
+              Nacidas en el vibrante corazón de Barranquilla, aportamos una perspectiva dual a cada proyecto:
+              equilibrando la creatividad audaz con una planificación meticulosa para garantizar que tu espacio no solo
+              luzca impresionante, sino que se sienta como un hogar.
+            </p>
+
+            <!-- Stats -->
+            <div class="stats-row">
+              <div class="stat-item reveal reveal-delay-1">
+                <span class="stat-number" data-target="80" data-suffix="+">0+</span>
+                <span class="stat-label">Proyectos</span>
+              </div>
+              <div class="stat-item reveal reveal-delay-2">
+                <span class="stat-number" data-target="5" data-suffix=" años">0 años</span>
+                <span class="stat-label">Experiencia</span>
+              </div>
+              <div class="stat-item reveal reveal-delay-3">
+                <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+                <span class="stat-label">Satisfacción</span>
+              </div>
+            </div>
+
+            <!-- Founders -->
+            <div class="founders-row" style="margin-top:2rem;">
+              <div class="founders-avatars">
+                <div class="avatar">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Camila G." />
+                </div>
+                <div class="avatar">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Camila E." />
+                </div>
+              </div>
+              <div class="founders-info">
+                <p class="name">Camila G. &amp; Camila E.</p>
+                <p class="role">Fundadoras y Diseñadoras Principales</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         SERVICIOS
+    ════════════════════════════════════════ -->
+    <section id="servicios" aria-labelledby="servicios-heading">
+      <div class="container">
+
+        <div class="services-header reveal">
+          <div class="section-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            Lo que hacemos
+          </div>
+          <h2 id="servicios-heading">Nuestros Servicios</h2>
+          <p>Desde la concepción hasta la entrega, transformamos cada espacio con precisión, <em
+              class="handwritten">pasión</em> y propósito.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Card 1: Interiorismo -->
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3>Interiorismo &amp; Styling</h3>
+            <p>Transformamos espacios residenciales en experiencias únicas. Selección de materiales, paletas de color,
+              mobiliario y accesorios que reflejan tu personalidad.</p>
+            <ul style="margin-top:1rem;padding-left:1.2rem;font-size:.85rem;line-height:2;color:inherit;opacity:.8;">
+              <li>Diseño de interiores residencial</li>
+              <li>Selección de mobiliario y textiles</li>
+              <li>Renders 3D hiperrealistas</li>
+              <li>Styling y decoración final</li>
+            </ul>
+          </article>
+
+          <!-- Card 2: Eventos -->
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3>Arquitectura de Eventos</h3>
+            <p>Creamos atmósferas efímeras y temáticas que sorprenden. Bodas, gala corporativas, lanzamientos de marca y
+              celebraciones exclusivas en Barranquilla y la región.</p>
+            <ul style="margin-top:1rem;padding-left:1.2rem;font-size:.85rem;line-height:2;color:inherit;opacity:.8;">
+              <li>Diseño conceptual y temático</li>
+              <li>Montaje y coordinación</li>
+              <li>Iluminación y ambientación</li>
+              <li>Eventos corporativos y sociales</li>
+            </ul>
+          </article>
+
+          <!-- Card 3: Gestión de Obra — FEATURED with Before/After -->
+          <article class="service-card featured reveal" style="transition-delay:.3s;">
+            <!-- Left: Text -->
+            <div>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3>Gestión Integral:<br><em class="handwritten" style="color:var(--accent-gold);">Tu sueño, cero
+                  estrés.</em></h3>
+              <p style="color:rgba(255,255,255,.75);margin:1rem 0;">Manejamos todo el proceso constructivo de principio
+                a fin. Presupuesto, contratistas, cronograma y supervisión. Tú solo esperas las llaves.</p>
+              <ul style="padding-left:1.2rem;font-size:.85rem;line-height:2;color:rgba(255,255,255,.7);">
+                <li>Gestión de presupuesto y proveedores</li>
+                <li>Supervisión de obra en sitio</li>
+                <li>Entrega llave en mano</li>
+                <li>Garantía post-entrega</li>
+              </ul>
+              <a href="#contacto" class="btn btn-outline" style="margin-top:1.5rem;font-size:.85rem;padding:10px 24px;">
+                Iniciar Proyecto
+              </a>
+            </div>
+
+            <!-- Right: Before/After Slider -->
+            <div>
+              <div class="before-after-wrap" role="img" aria-label="Slider antes y después de una renovación">
+                <!-- After (background) -->
+                <div class="ba-after"></div>
+                <!-- Before (clipped overlay) -->
+                <div class="ba-before">
+                  <div class="ba-before-img"></div>
+                </div>
+                <!-- Handle -->
+                <div class="ba-handle" aria-hidden="true">
+                  <div class="ba-handle-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="15 18 9 12 15 6" />
+                      <polyline points="9 18 15 12 9 6" transform="translate(6,0)" />
+                    </svg>
+                  </div>
+                </div>
+                <!-- Labels -->
+                <span class="ba-label antes" aria-hidden="true">ANTES</span>
+                <span class="ba-label despues" aria-hidden="true">DESPUÉS</span>
+              </div>
+              <p class="ba-hint" aria-label="Instrucción: desliza para ver la transformación">
+                ← Desliza para ver la transformación →
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         VIDEOS — Nuestro Proceso
+    ════════════════════════════════════════ -->
+    <section id="proceso" aria-labelledby="proceso-heading">
+      <div class="container">
+
+        <div class="videos-header reveal">
+          <div class="section-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <polygon points="23 7 16 12 23 17 23 7" />
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+            </svg>
+            Detrás de cámaras
+          </div>
+          <h2 id="proceso-heading">Nuestro <em class="handwritten">Proceso</em></h2>
+          <p>Conoce cómo trabajamos: desde la remodelación de espacios hasta la creación de experiencias únicas como
+            SantaLand.</p>
+        </div>
+
+        <div class="videos-grid">
+
+          <!-- Video 1: Remodelación -->
+          <div class="video-card reveal reveal-delay-1">
+            <div class="video-wrap">
+              <video id="video-remodelacion" src="Galeria/Videos/Remodelación.mp4" loop playsinline muted
+                preload="metadata" aria-label="Video del proceso de remodelación de Verza Design"></video>
+              <!-- Play/Pause overlay -->
+              <button class="video-play-btn" aria-label="Reproducir video" data-video="video-remodelacion">
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                  <rect x="6" y="4" width="4" height="16" />
+                  <rect x="14" y="4" width="4" height="16" />
+                </svg>
+              </button>
+              <!-- Mute toggle -->
+              <button class="video-mute-btn" aria-label="Activar audio" data-video="video-remodelacion">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+                </svg>
+              </button>
+            </div>
+            <div class="video-info">
+              <span class="video-tag">Remodelación</span>
+              <h3>Proceso de Obra</h3>
+              <p>Un vistazo al proceso real de transformación de un espacio, desde el inicio hasta el resultado final.
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 2: SantaLand -->
+          <div class="video-card reveal reveal-delay-2">
+            <div class="video-wrap">
+              <video id="video-santaland" src="Galeria/Videos/SantaLand.mp4" loop playsinline muted
+                preload="metadata"></video>
+              <!-- Play/Pause overlay -->
+              <button class="video-play-btn" aria-label="Reproducir video" data-video="video-santaland">
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                  <rect x="6" y="4" width="4" height="16" />
+                  <rect x="14" y="4" width="4" height="16" />
+                </svg>
+              </button>
+              <!-- Mute toggle -->
+              <button class="video-mute-btn" aria-label="Activar audio" data-video="video-santaland">
+                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="display:none">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+                </svg>
+              </button>
+            </div>
+            <div class="video-info">
+              <span class="video-tag">Arquitectura de Eventos</span>
+              <h3>SantaLand — Parque Temático</h3>
+              <p>Camila G. y Camila E. cuentan su experiencia e inspiración detrás del diseño de este parque temático
+                navideño.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PORTAFOLIO
+    ════════════════════════════════════════ -->
+    <section id="portafolio" aria-labelledby="portafolio-heading">
+      <div class="container">
+
+        <div class="portfolio-header">
+          <div>
+            <div class="section-label reveal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+              Nuestro trabajo
+            </div>
+            <h2 id="portafolio-heading" class="reveal reveal-delay-1">Proyectos Seleccionados</h2>
+            <p class="reveal reveal-delay-2" style="max-width:480px;">Explora nuestros proyectos en Barranquilla y la
+              región Caribe.</p>
+          </div>
+          <div class="filter-buttons reveal reveal-delay-2" role="group" aria-label="Filtrar proyectos">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="residencial">Residencial</button>
+            <button class="filter-btn" data-filter="comercial">Comercial</button>
+            <button class="filter-btn" data-filter="eventos">Eventos</button>
+          </div>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="portfolio-masonry" role="list">
+
+          <div class="portfolio-item" data-category="residencial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80"
+              alt="Callejón Urbano — diseño residencial moderno" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Residencial</span>
+              <h3 class="proj-name">Callejón Urbano</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="comercial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
+              alt="Hotel Puerto Colombia — lobby de lujo tropical" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Comercial</span>
+              <h3 class="proj-name">Hotel Puerto Colombia</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="comercial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
+              alt="Oficina Corporativa — diseño de espacios de trabajo" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Comercial</span>
+              <h3 class="proj-name">Oficina Corporativa</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="eventos" role="listitem">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80"
+              alt="Merlot Event — arquitectura de evento de gala" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Eventos</span>
+              <h3 class="proj-name">Merlot Event</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="comercial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80"
+              alt="Estética Vivante — diseño de spa y bienestar" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Comercial</span>
+              <h3 class="proj-name">Estética Vivante</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="eventos" role="listitem">
+            <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=600&q=80"
+              alt="Niebla Nocturna — evento temático nocturno" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Eventos</span>
+              <h3 class="proj-name">Niebla Nocturna</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="residencial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80"
+              alt="Apartamento Daniela — diseño residencial íntimo" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Residencial</span>
+              <h3 class="proj-name">Apto. Daniela</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="residencial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80"
+              alt="Apartamento 4A — diseño minimalista panorámico" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Residencial</span>
+              <h3 class="proj-name">Apartamento 4A</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="comercial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80"
+              alt="Estudio BOE — espacio de trabajo creativo" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Comercial</span>
+              <h3 class="proj-name">Estudio BOE</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="residencial" role="listitem">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+              alt="Patio L — diseño de espacio exterior residencial" loading="lazy" />
+            <div class="portfolio-overlay" aria-hidden="true">
+              <span class="proj-cat">Residencial</span>
+              <h3 class="proj-name">Patio L</h3>
+            </div>
+          </div>
+
+        </div><!-- /masonry -->
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         TESTIMONIOS
+    ════════════════════════════════════════ -->
+    <section id="testimonios" aria-labelledby="testimonios-heading">
+      <div class="container">
+
+        <div class="testimonios-header reveal">
+          <div class="section-label" style="color:rgba(255,255,255,.8);background:rgba(255,255,255,.1);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            Clientes felices
+          </div>
+          <h2 id="testimonios-heading">Amados por nuestros clientes</h2>
+          <p>No solo construimos espacios; construimos relaciones basadas en confianza y transparencia.</p>
+        </div>
+
+        <div class="testimonios-grid">
+
+          <article class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-stars" aria-label="5 estrellas">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <p class="testimonial-text">"El equipo de Verza Design transformó nuestro apartamento completamente. La
+              promesa de 'llave en mano' fue real: no nos preocupamos por nada hasta que nos entregaron las llaves. El
+              resultado superó todas nuestras expectativas."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">MC</div>
+              <div>
+                <p class="author-name">Maria Clara Ospina</p>
+                <p class="author-role">Cliente Residencial</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-stars" aria-label="5 estrellas">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <p class="testimonial-text">"Profesionalismo en su máxima expresión. Los renders eran exactamente como el
+              resultado final. El Hotel Puerto Colombia quedó exactamente como lo soñamos. Altamente recomendado para
+              cualquier proyecto comercial."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">AR</div>
+              <div>
+                <p class="author-name">Andrés Rodríguez</p>
+                <p class="author-role">Cliente Comercial</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-3">
+            <div class="testimonial-stars" aria-label="5 estrellas">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <p class="testimonial-text">"El evento Merlot fue un sueño hecho realidad. Cada detalle fue pensado con amor
+              y precisión. Nuestros invitados todavía hablan de la atmósfera que crearon. ¡Son unas artistas!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">LV</div>
+              <div>
+                <p class="author-name">Laura Vásquez</p>
+                <p class="author-role">Evento Corporativo</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CONTACTO
+    ════════════════════════════════════════ -->
+    <section id="contacto" aria-labelledby="contacto-heading">
+      <div class="container">
+        <div class="contacto-grid">
+
+          <!-- Info -->
+          <div class="contacto-content reveal-left">
+            <div class="section-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+              </svg>
+              Hablemos
+            </div>
+            <h2 id="contacto-heading">¿Listo para transformar tu <em class="handwritten">espacio?</em></h2>
+            <p>Cuéntanos tu proyecto y agendamos un diagnóstico gratuito. Sin compromisos, solo buena vibra y grandes
+              ideas.</p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Cra 54 No. 59-291, Barranquilla, Colombia</span>
+              </div>
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" />
+                </svg>
+                <span>(311) 331-7983 / (300) 247-1057</span>
+              </div>
+              <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span>hola@verzadesign.co</span>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <a href="https://wa.me/573113317983" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                WhatsApp
+              </a>
+              <a href="https://www.instagram.com/verzadesign" target="_blank" rel="noopener"
+                class="btn btn-outline-dark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="reveal-right">
+            <form class="contacto-form" id="contact-form" novalidate>
+              <h3 style="font-size:1.25rem;margin-bottom:1.5rem;color:var(--text-primary);">Agendar Diagnóstico Gratuito
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" placeholder="(300) 000-0000" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="servicio">Servicio de interés</label>
+                <select id="servicio" name="servicio">
+                  <option value="">Selecciona un servicio</option>
+                  <option value="interiorismo">Interiorismo &amp; Styling</option>
+                  <option value="eventos">Arquitectura de Eventos</option>
+                  <option value="gestion">Gestión de Obra</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">Cuéntanos tu proyecto</label>
+                <textarea id="mensaje" name="mensaje"
+                  placeholder="Describe brevemente tu espacio, tus ideas y tu presupuesto aproximado..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;">
+                Enviar Mensaje
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="logo-text">
+            <div class="logo-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            Verza Design
+          </div>
+          <p>Estudio de diseño de interiores y arquitectura de eventos en Barranquilla, Colombia. Creamos espacios con
+            alma y <em class="handwritten" style="font-size:1.1em;">buena vibra.</em></p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/verzadesign" target="_blank" rel="noopener" class="social-link"
+              aria-label="Instagram de Verza Design">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/verzadesign" target="_blank" rel="noopener" class="social-link"
+              aria-label="Facebook de Verza Design">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="https://wa.me/573113317983" target="_blank" rel="noopener" class="social-link"
+              aria-label="WhatsApp de Verza Design">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Explorar -->
+        <nav class="footer-col" aria-label="Explorar">
+          <h4>Explorar</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotras">Nosotras</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#portafolio">Portafolio</a>
+          <a href="#testimonios">Testimonios</a>
+        </nav>
+
+        <!-- Servicios -->
+        <nav class="footer-col" aria-label="Servicios">
+          <h4>Servicios</h4>
+          <a href="#servicios">Interiorismo</a>
+          <a href="#servicios">Arq. de Eventos</a>
+          <a href="#servicios">Gestión de Obra</a>
+          <a href="#contacto">Diagnóstico Gratis</a>
+        </nav>
+
+        <!-- Contacto -->
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Cra 54 No. 59-291<br>Barranquilla, Colombia</span>
+          </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" />
+            </svg>
+            <span>(311) 331-7983<br>(300) 247-1057</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Verza Design. Todos los derechos reservados.</span>
+        <span>Hecho con <em class="handwritten" style="font-size:1.1em;color:var(--royal-blue);">amor</em> en
+          Barranquilla 🇨🇴</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── WhatsApp FAB ── -->
+  <a id="whatsapp-fab"
+    href="https://wa.me/573113317983?text=Hola%20Verza%20Design!%20Me%20interesa%20agendar%20un%20diagn%C3%B3stico."
+    target="_blank" rel="noopener" aria-label="Chatear por WhatsApp con Verza Design">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ── Scripts ── -->
+  <script>
+    // Show header CTA after scroll
+    const headerCta = document.getElementById('header-cta');
+    window.addEventListener('scroll', () => {
+      if (headerCta) {
+        headerCta.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      }
+    }, { passive: true });
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+
+</body>
+
+</html>

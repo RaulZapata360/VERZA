@@ -1,0 +1,16 @@
+# Galeria local — solo para prototipo, no subir al repo
+Galeria/
+
+# Carpetas de prototipos anteriores
+verza_design_-_about_us_page/
+verza_design_-_services_&_portfolio/
+verza_design_home_page/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+*.swp
