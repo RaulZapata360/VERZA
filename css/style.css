@@ -528,7 +528,7 @@ img {
 
 /* ── Nosotras Section ── */
 #nosotras {
-  padding: clamp(5rem, 10vw, 9rem) 0;
+  padding: clamp(3rem, 5vw, 4rem) 0;
   background: var(--pure-white);
   overflow: hidden;
 }
@@ -536,13 +536,13 @@ img {
 .nosotras-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 6vw, 6rem);
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
 
 .nosotras-image-wrap {
   position: relative;
-  width: 85%;
+  width: 70%;
   /* Reduced size to fit better on screen (Zoom effect) */
   margin: 0 auto;
 }
@@ -607,26 +607,26 @@ img {
 
 .nosotras-content h2 {
   font-size: clamp(2.2rem, 4vw, 3.5rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .nosotras-quote {
   background: var(--smoke-white);
   border-left: 3px solid var(--royal-blue);
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .nosotras-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--slate-gray);
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
 }
 
 .founders-row {
