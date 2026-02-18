@@ -1542,33 +1542,35 @@ img {
 
 /* ── Video Section ── */
 #proceso {
-  padding: clamp(5rem, 10vw, 9rem) 0;
-  background: var(--dark-bg);
+  padding: clamp(3rem, 5vw, 5rem) 0;
+  background: var(--smoke-white);
 }
 
 #proceso .section-label {
-  color: rgba(255, 255, 255, .8);
-  background: rgba(255, 255, 255, .1);
+  color: var(--royal-blue);
+  background: rgba(26, 63, 196, .08);
 }
 
 #proceso h2 {
-  color: white;
+  color: var(--text-primary);
 }
 
 #proceso p {
-  color: rgba(255, 255, 255, .65);
+  color: var(--slate-gray);
 }
+
 
 .videos-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2.5rem;
 }
 
 .videos-header h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
+
 
 .videos-grid {
   display: flex;
@@ -1578,14 +1580,15 @@ img {
 }
 
 .video-card {
-  flex: 1 1 300px;
-  max-width: 400px;
-  background: var(--dark-surface);
+  flex: 1 1 260px;
+  max-width: 300px;
+  background: var(--pure-white);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .07);
+  border: 1px solid var(--border-light);
   transition: var(--transition);
 }
+
 
 .video-card:hover {
   transform: translateY(-6px);
@@ -1693,7 +1696,7 @@ img {
 
 /* Video info below the video */
 .video-info {
-  padding: 1.5rem 1.75rem 1.75rem;
+  padding: 1.25rem 1.5rem 1.5rem;
 }
 
 .video-tag {
@@ -1702,8 +1705,8 @@ img {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--royal-light);
-  background: rgba(26, 63, 196, .15);
+  color: var(--royal-blue);
+  background: rgba(26, 63, 196, .08);
   padding: 4px 12px;
   border-radius: var(--radius-full);
   margin-bottom: 0.75rem;
@@ -1711,12 +1714,12 @@ img {
 
 .video-info h3 {
   font-size: 1.15rem;
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .video-info p {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, .55);
+  color: var(--slate-gray);
   line-height: 1.6;
 }
