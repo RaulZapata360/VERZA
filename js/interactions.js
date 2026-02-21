@@ -6,7 +6,7 @@
 'use strict';
 
 // ── Magnetic Cursor ──────────────────────────────────────────
-const cursor       = document.getElementById('cursor');
+const cursor = document.getElementById('cursor');
 const cursorFollow = document.getElementById('cursor-follower');
 
 let mouseX = 0, mouseY = 0;
@@ -17,7 +17,7 @@ if (cursor && cursorFollow) {
     mouseX = e.clientX;
     mouseY = e.clientY;
     cursor.style.left = mouseX + 'px';
-    cursor.style.top  = mouseY + 'px';
+    cursor.style.top = mouseY + 'px';
   });
 
   // Lerp follower for smooth lag effect
@@ -25,14 +25,14 @@ if (cursor && cursorFollow) {
     followX += (mouseX - followX) * 0.12;
     followY += (mouseY - followY) * 0.12;
     cursorFollow.style.left = followX + 'px';
-    cursorFollow.style.top  = followY + 'px';
+    cursorFollow.style.top = followY + 'px';
     requestAnimationFrame(animateCursor);
   }
   animateCursor();
 
   // Magnetic hover effect on interactive elements
   const magneticEls = document.querySelectorAll(
-    'a, button, .portfolio-item, .service-card, .filter-btn, .social-link, #whatsapp-fab'
+    'a, button, .proj-slide, .service-card, .filter-btn, .social-link, #whatsapp-fab'
   );
 
   magneticEls.forEach(el => {
@@ -76,18 +76,6 @@ function handleParallax() {
   if (heroBg) {
     heroBg.style.transform = `scale(1.1) translateY(${scrollY * 0.35}px)`;
   }
-
-  // Portfolio items subtle parallax
-  document.querySelectorAll('.portfolio-item').forEach((item, i) => {
-    const rect = item.getBoundingClientRect();
-    const centerY = rect.top + rect.height / 2;
-    const viewportCenter = window.innerHeight / 2;
-    const offset = (centerY - viewportCenter) * 0.04;
-    const img = item.querySelector('img');
-    if (img) {
-      img.style.transform = `scale(1.08) translateY(${offset}px)`;
-    }
-  });
 }
 
 window.addEventListener('scroll', handleParallax, { passive: true });

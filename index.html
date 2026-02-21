@@ -12,12 +12,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&family=Nothing+You+Could+Do&display=swap"
     rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/style.css?v=2.0" />
+  <link rel="stylesheet" href="css/animations.css?v=2.0" />
 </head>
 
 <body>
@@ -109,7 +109,7 @@
       <div id="hero">
         <div class="hero-bg parallax-bg" role="img"
           aria-label="Verza Design — Camila G. y Camila E. en sesión de foto con materiales y colores"
-          style="background-image: url('https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/Hero%2001.jpg'); background-position: center 25%;">
+          style="background-image: url('https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/Hero%2001%20v2.jpg'); background-position: center 25%;">
         </div>
         <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -129,8 +129,7 @@
           </h1>
 
           <p class="hero-subtitle">
-            Diseño de interiores y arquitectura de eventos exclusivos en Barranquilla. Creamos atmósferas que cuentan tu
-            historia.
+            DISEÑO DE ESPACIOS
           </p>
 
           <div class="hero-ctas">
@@ -197,8 +196,8 @@
             </div>
 
             <!-- Badge -->
-            <div class="nosotras-badge" aria-label="5 años de experiencia">
-              <span class="badge-num">5+</span>
+            <div class="nosotras-badge" aria-label="6 años de experiencia">
+              <span class="badge-num">6+</span>
               <span class="badge-text">Años de<br>experiencia</span>
             </div>
           </div>
@@ -215,55 +214,58 @@
             </div>
 
             <h2 id="nosotras-heading">
-              Detrás de<br><em class="handwritten">Verza Design</em>
+              Detrás de<br><em class="brand-script" style="font-size:1.1em;">Verza Design</em>
             </h2>
 
-            <blockquote class="nosotras-quote">
-              "Somos 2 diseñadoras con personalidades opuestas, pero con la misma pasión, honestidad y buena <em
-                class="handwritten">vibra.</em>"
-            </blockquote>
+            <!-- Founders names -->
+            <div class="founders-names" style="margin-bottom:1.5rem;">
+              <p style="font-weight:600;font-size:1rem;color:var(--text-primary);margin:0;">Maria Camila Escolar, Maria
+                Camila Gomez</p>
+              <p style="font-size:.9rem;color:var(--slate-gray);margin:.2rem 0 0;">Diseñadoras de espacios.</p>
+            </div>
 
-            <p class="nosotras-text">
-              Somos 2 diseñadoras de espacios que hace cinco años decidimos unir nuestras ideas, nuestros sueños y
-              nuestra pasión por crear. Juntas construimos <strong>Verza Design</strong>, un estudio donde el diseño se
-              vive con <em class="handwritten">creatividad,</em> honestidad y buena vibra.
-            </p>
+            <!-- Text + Photos side by side -->
+            <div class="nosotras-text-photos">
+              <div class="nosotras-text-block">
+                <p class="nosotras-text">
+                  Somos dos diseñadoras de espacios que hace seis años, decidimos unir nuestras ideas, estilos y visión
+                  para crear algo <em class="handwritten">diferente.</em> Así nace <strong>Verza Design</strong>, un
+                  estudio donde el diseño se vive con <em class="handwritten">creatividad,</em> criterio y propósito.
+                  Nos apasiona conectar con cada cliente, comprender sus necesidades y transformar sus ideas en espacios
+                  funcionales, auténticos y con identidad propia.
+                </p>
 
-            <p class="nosotras-text">
-              Nacidas en el vibrante corazón de Barranquilla, aportamos una perspectiva dual a cada proyecto:
-              equilibrando la creatividad audaz con una planificación meticulosa para garantizar que tu espacio no solo
-              luzca impresionante, sino que se sienta como un hogar.
-            </p>
+                <p class="nosotras-text">
+                  Valoramos la estética, pero también la estrategia y la solución, porque creemos que un buen diseño no
+                  solo se ve bien, sino que responde, comunica y trasciende cuando se construye con <em
+                    class="handwritten">intención.</em>
+                </p>
+              </div>
+
+              <!-- Designer photos -->
+              <div class="designer-photos">
+                <img src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/Camila%20E.jpg"
+                  alt="Maria Camila Escolar — Diseñadora de espacios" class="designer-photo designer-photo-small"
+                  loading="lazy" />
+                <img src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/Camila%20G.jpg"
+                  alt="Maria Camila Gomez — Diseñadora de espacios" class="designer-photo designer-photo-large"
+                  loading="lazy" />
+              </div>
+            </div>
 
             <!-- Stats -->
             <div class="stats-row">
               <div class="stat-item reveal reveal-delay-1">
-                <span class="stat-number" data-target="80" data-suffix="+">0+</span>
+                <span class="stat-number" data-target="180" data-suffix="+">0+</span>
                 <span class="stat-label">Proyectos</span>
               </div>
               <div class="stat-item reveal reveal-delay-2">
-                <span class="stat-number" data-target="5" data-suffix=" años">0 años</span>
+                <span class="stat-number" data-target="6" data-suffix=" años">0 años</span>
                 <span class="stat-label">Experiencia</span>
               </div>
               <div class="stat-item reveal reveal-delay-3">
                 <span class="stat-number" data-target="100" data-suffix="%">0%</span>
                 <span class="stat-label">Satisfacción</span>
-              </div>
-            </div>
-
-            <!-- Founders -->
-            <div class="founders-row" style="margin-top:2rem;">
-              <div class="founders-avatars">
-                <div class="avatar">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Camila G." />
-                </div>
-                <div class="avatar">
-                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Camila E." />
-                </div>
-              </div>
-              <div class="founders-info">
-                <p class="name">Camila G. &amp; Camila E.</p>
-                <p class="role">Fundadoras y Diseñadoras Principales</p>
               </div>
             </div>
           </div>
@@ -294,48 +296,50 @@
 
         <div class="services-grid">
 
-          <!-- Card 1: Interiorismo -->
+          <!-- Card 1: Residencial -->
           <article class="service-card reveal reveal-delay-1">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
             </div>
-            <h3>Interiorismo &amp; Styling</h3>
-            <p>Transformamos espacios residenciales en experiencias únicas. Selección de materiales, paletas de color,
-              mobiliario y accesorios que reflejan tu personalidad.</p>
-            <ul style="margin-top:1rem;padding-left:1.2rem;font-size:.85rem;line-height:2;color:inherit;opacity:.8;">
-              <li>Diseño de interiores residencial</li>
-              <li>Selección de mobiliario y textiles</li>
-              <li>Renders 3D hiperrealistas</li>
-              <li>Styling y decoración final</li>
-            </ul>
+            <h3>Residencial</h3>
+            <p>Creamos hogares que reflejan tu esencia. Espacios que te acogen, te inspiran y te transforman cada día.
+            </p>
           </article>
 
-          <!-- Card 2: Eventos -->
+          <!-- Card 2: Comercial -->
           <article class="service-card reveal reveal-delay-2">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
               </svg>
             </div>
-            <h3>Arquitectura de Eventos</h3>
-            <p>Creamos atmósferas efímeras y temáticas que sorprenden. Bodas, gala corporativas, lanzamientos de marca y
-              celebraciones exclusivas en Barranquilla y la región.</p>
-            <ul style="margin-top:1rem;padding-left:1.2rem;font-size:.85rem;line-height:2;color:inherit;opacity:.8;">
-              <li>Diseño conceptual y temático</li>
-              <li>Montaje y coordinación</li>
-              <li>Iluminación y ambientación</li>
-              <li>Eventos corporativos y sociales</li>
-            </ul>
+            <h3>Comercial</h3>
+            <p>Diseñamos espacios que cuentan la historia de tu marca, conectan con tus clientes y reflejan el alma de
+              tu marca, elevando tu propuesta de valor.</p>
           </article>
 
-          <!-- Card 3: Gestión de Obra — FEATURED with Before/After -->
+          <!-- Card 3: Experiencias -->
+          <article class="service-card reveal" style="transition-delay:.2s;">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h3>Experiencias</h3>
+            <p>Creamos momentos que dejan huella, con atmósferas que se viven con todos los sentidos y se recuerdan con
+              emoción.</p>
+          </article>
+
+          <!-- Card 4: Gestión Integral — FEATURED with Before/After -->
           <article class="service-card featured reveal" style="transition-delay:.3s;">
             <!-- Left: Text -->
             <div>
@@ -349,14 +353,10 @@
               </div>
               <h3>Gestión Integral:<br><em class="handwritten" style="color:var(--accent-gold);">Tu sueño, cero
                   estrés.</em></h3>
-              <p style="color:rgba(255,255,255,.75);margin:1rem 0;">Manejamos todo el proceso constructivo de principio
-                a fin. Presupuesto, contratistas, cronograma y supervisión. Tú solo esperas las llaves.</p>
-              <ul style="padding-left:1.2rem;font-size:.85rem;line-height:2;color:rgba(255,255,255,.7);">
-                <li>Gestión de presupuesto y proveedores</li>
-                <li>Supervisión de obra en sitio</li>
-                <li>Entrega llave en mano</li>
-                <li>Garantía post-entrega</li>
-              </ul>
+              <p style="color:rgba(255,255,255,.75);margin:1rem 0;">Gestionamos todo el proceso de diseño y
+                materialización de tu espacio de principio a fin. Desde la propuesta 3D y la cotización, hasta la
+                fabricación, ejecución y entrega final. Tú solo visualizas el resultado; nosotros lo hacemos realidad.
+              </p>
               <a href="#contacto" class="btn btn-outline" style="margin-top:1.5rem;font-size:.85rem;padding:10px 24px;">
                 Iniciar Proyecto
               </a>
@@ -410,93 +410,140 @@
             </svg>
             Detrás de cámaras
             <span
-              style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--accent-gold);color:var(--dark-bg);border-radius:50%;font-size:0.6rem;font-weight:800;margin-left:2px;">2</span>
+              style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--accent-gold);color:var(--dark-bg);border-radius:50%;font-size:0.6rem;font-weight:800;margin-left:2px;">4</span>
           </div>
           <h2 id="proceso-heading">Nuestro <em class="handwritten">Proceso</em></h2>
           <p>Conoce cómo trabajamos: desde la remodelación de espacios hasta la creación de experiencias únicas como
             SantaLand.</p>
         </div>
 
-        <div class="videos-grid">
+        <!-- Reel Carousel — 3-slide visible with info panel -->
+        <div class="reel-carousel reveal">
 
-          <!-- Video 1: Remodelación -->
-          <div class="video-card reveal reveal-delay-1">
-            <div class="video-wrap">
-              <video id="video-remodelacion"
-                src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/Remodelacion.mp4" loop
-                playsinline muted preload="metadata"
-                aria-label="Video del proceso de remodelación de Verza Design"></video>
-              <!-- Play/Pause overlay -->
-              <button class="video-play-btn" aria-label="Reproducir video" data-video="video-remodelacion">
-                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none">
-                  <rect x="6" y="4" width="4" height="16" />
-                  <rect x="14" y="4" width="4" height="16" />
-                </svg>
-              </button>
-              <!-- Mute toggle -->
-              <button class="video-mute-btn" aria-label="Activar audio" data-video="video-remodelacion">
-                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <line x1="23" y1="9" x2="17" y2="15" />
-                  <line x1="17" y1="9" x2="23" y2="15" />
-                </svg>
-                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="display:none">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
-                </svg>
-              </button>
+          <!-- Carousel stage: shows prev / active / next -->
+          <div class="reel-stage">
+            <button class="reel-arrow reel-arrow--prev" aria-label="Reel anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+
+            <!-- Reel 1 -->
+            <div class="reel-slide active" data-index="0" data-tag="Remodelación" data-title="Proceso de Obra"
+              data-desc="Un vistazo al proceso real de transformación de un espacio.">
+              <div class="video-wrap">
+                <video id="video-remodelacion"
+                  src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/Remodelacion.mp4" loop
+                  playsinline muted preload="metadata"></video>
+                <button class="video-play-btn" aria-label="Reproducir" data-video="video-remodelacion">
+                  <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                    <rect x="6" y="4" width="4" height="16" />
+                    <rect x="14" y="4" width="4" height="16" />
+                  </svg>
+                </button>
+                <button class="video-mute-btn" aria-label="Activar audio" data-video="video-remodelacion">
+                  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <line x1="23" y1="9" x2="17" y2="15" />
+                    <line x1="17" y1="9" x2="23" y2="15" />
+                  </svg>
+                  <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="display:none">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="video-info">
-              <span class="video-tag">Remodelación</span>
-              <h3>Proceso de Obra</h3>
-              <p>Un vistazo al proceso real de transformación de un espacio, desde el inicio hasta el resultado final.
-              </p>
+
+            <!-- Reel 2 -->
+            <div class="reel-slide next" data-index="1" data-tag="Arquitectura de Eventos"
+              data-title="SantaLand — Parque Temático"
+              data-desc="Camila G. y Camila E. cuentan su inspiración detrás del diseño.">
+              <div class="video-wrap">
+                <video id="video-santaland"
+                  src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/SantaLand.mp4" loop
+                  playsinline muted preload="metadata"></video>
+                <button class="video-play-btn" aria-label="Reproducir" data-video="video-santaland">
+                  <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                    <rect x="6" y="4" width="4" height="16" />
+                    <rect x="14" y="4" width="4" height="16" />
+                  </svg>
+                </button>
+                <button class="video-mute-btn" aria-label="Activar audio" data-video="video-santaland">
+                  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <line x1="23" y1="9" x2="17" y2="15" />
+                    <line x1="17" y1="9" x2="23" y2="15" />
+                  </svg>
+                  <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="display:none">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+                  </svg>
+                </button>
+              </div>
             </div>
+
+            <!-- Reel 3 -->
+            <div class="reel-slide hidden" data-index="2" data-tag="Próximamente" data-title="Nuevo Reel"
+              data-desc="Contenido en producción — pronto aquí.">
+              <div class="video-wrap">
+                <div class="video-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5" width="48"
+                    height="48">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reel 4 -->
+            <div class="reel-slide prev" data-index="3" data-tag="Próximamente" data-title="Nuevo Reel"
+              data-desc="Contenido en producción — pronto aquí.">
+              <div class="video-wrap">
+                <div class="video-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5" width="48"
+                    height="48">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <button class="reel-arrow reel-arrow--next" aria-label="Siguiente reel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
           </div>
 
-          <!-- Video 2: SantaLand -->
-          <div class="video-card reveal reveal-delay-2">
-            <div class="video-wrap">
-              <video id="video-santaland"
-                src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/VERZA/SantaLand.mp4" loop
-                playsinline muted preload="metadata"></video>
-              <!-- Play/Pause overlay -->
-              <button class="video-play-btn" aria-label="Reproducir video" data-video="video-santaland">
-                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none">
-                  <rect x="6" y="4" width="4" height="16" />
-                  <rect x="14" y="4" width="4" height="16" />
-                </svg>
-              </button>
-              <!-- Mute toggle -->
-              <button class="video-mute-btn" aria-label="Activar audio" data-video="video-santaland">
-                <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <line x1="23" y1="9" x2="17" y2="15" />
-                  <line x1="17" y1="9" x2="23" y2="15" />
-                </svg>
-                <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="display:none">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
-                </svg>
-              </button>
-            </div>
-            <div class="video-info">
-              <span class="video-tag">Arquitectura de Eventos</span>
-              <h3>SantaLand — Parque Temático</h3>
-              <p>Camila G. y Camila E. cuentan su experiencia e inspiración detrás del diseño de este parque temático
-                navideño.</p>
+          <!-- Info panel — updates dynamically -->
+          <div class="reel-info-panel">
+            <span class="video-tag">Remodelación</span>
+            <h3>Proceso de Obra</h3>
+            <p>Un vistazo al proceso real de transformación de un espacio.</p>
+            <div class="reel-counter">
+              <span class="reel-counter-current">1</span> / <span class="reel-counter-total">4</span>
             </div>
           </div>
 
         </div>
+
+        <!-- Carousel dots -->
+        <div class="reel-dots">
+          <button class="reel-dot active" data-slide="0" aria-label="Reel 1"></button>
+          <button class="reel-dot" data-slide="1" aria-label="Reel 2"></button>
+          <button class="reel-dot" data-slide="2" aria-label="Reel 3"></button>
+          <button class="reel-dot" data-slide="3" aria-label="Reel 4"></button>
+        </div>
+
       </div>
     </section>
 
@@ -524,236 +571,342 @@
           </div>
           <div class="filter-buttons reveal reveal-delay-2" role="group" aria-label="Filtrar proyectos">
             <button class="filter-btn active" data-filter="todos">Todos</button>
-            <button class="filter-btn" data-filter="residencial">Residencial</button>
-            <button class="filter-btn" data-filter="comercial">Comercial</button>
-            <button class="filter-btn" data-filter="eventos">Eventos</button>
+            <button class="filter-btn" data-filter="hogar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Hogar
+            </button>
+            <button class="filter-btn" data-filter="comercial">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+              </svg>
+              Comercial
+            </button>
+            <button class="filter-btn" data-filter="experiencias">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              Experiencias
+            </button>
           </div>
         </div>
 
-        <!-- Masonry Grid -->
-        <div class="portfolio-masonry" role="list">
+        <!-- ═══ Category Carousels (browse mode) ═══ -->
+        <div id="portfolio-browse">
 
-          <div class="portfolio-item" data-category="residencial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80"
-              alt="Callejón Urbano — diseño residencial moderno" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Residencial</span>
-              <h3 class="proj-name">Callejón Urbano</h3>
+          <!-- Hogar Row -->
+          <div class="cat-row reveal" data-category="hogar">
+            <div class="cat-row-header">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Hogar
+              </h3>
+              <span class="cat-count">6 proyectos</span>
+            </div>
+            <div class="proj-carousel-wrap">
+              <button class="carousel-arrow carousel-arrow-left" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div class="proj-carousel">
+
+                <div class="proj-slide" data-project="daniel" data-name="Daniel" data-cat="Hogar" data-count="5"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/daniel/DANIEL%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/daniel/DANIEL%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/daniel/DANIEL%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/daniel/DANIEL%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/daniel/DANIEL%2005.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/daniel/DANIEL%2001.jpg?v=2"
+                    alt="Proyecto Daniel" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Hogar</span>
+                    <h4 class="proj-name">Daniel</h4>
+                    <span class="proj-count">5 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="dante" data-name="Dante" data-cat="Hogar" data-count="5"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/dante/DANTE%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/dante/DANTE%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/dante/DANTE%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/dante/DANTE%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/dante/DANTE%2005.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/dante/DANTE%2001.jpg?v=2"
+                    alt="Proyecto Dante" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Hogar</span>
+                    <h4 class="proj-name">Dante</h4>
+                    <span class="proj-count">5 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="elena" data-name="Elena" data-cat="Hogar" data-count="4"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/elena/ELENA%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/elena/ELENA%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/elena/ELENA%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/elena/ELENA%2004.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/elena/ELENA%2001.jpg?v=2"
+                    alt="Proyecto Elena" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Hogar</span>
+                    <h4 class="proj-name">Elena</h4>
+                    <span class="proj-count">4 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="joce" data-name="Joce" data-cat="Hogar" data-count="4"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/joce/JOCE%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/joce/JOCE%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/joce/JOCE%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/joce/JOCE%2004.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/joce/JOCE%2001.jpg?v=2"
+                    alt="Proyecto Joce" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Hogar</span>
+                    <h4 class="proj-name">Joce</h4>
+                    <span class="proj-count">4 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="juanpa" data-name="Juanpa" data-cat="Hogar" data-count="5"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/juanpa/JUANPA%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/juanpa/JUANPA%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/juanpa/JUANPA%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/juanpa/JUANPA%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/juanpa/JUANPA%2005.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/juanpa/JUANPA%2001.jpg?v=2"
+                    alt="Proyecto Juanpa" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Hogar</span>
+                    <h4 class="proj-name">Juanpa</h4>
+                    <span class="proj-count">5 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="luis-nunez" data-name="Luis Nuñez" data-cat="Hogar" data-count="6"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2005.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2006.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/hogar/luis-nunez/LUIS%20NUNEZ%2001.jpg?v=2"
+                    alt="Proyecto Luis Nuñez" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Hogar</span>
+                    <h4 class="proj-name">Luis Nuñez</h4>
+                    <span class="proj-count">6 imágenes</span>
+                  </div>
+                </div>
+
+              </div>
+              <button class="carousel-arrow carousel-arrow-right" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
           </div>
 
-          <div class="portfolio-item" data-category="comercial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
-              alt="Hotel Puerto Colombia — lobby de lujo tropical" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Comercial</span>
-              <h3 class="proj-name">Hotel Puerto Colombia</h3>
+          <!-- Comercial Row -->
+          <div class="cat-row reveal" data-category="comercial">
+            <div class="cat-row-header">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+                Comercial
+              </h3>
+              <span class="cat-count">3 proyectos</span>
+            </div>
+            <div class="proj-carousel-wrap">
+              <button class="carousel-arrow carousel-arrow-left" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div class="proj-carousel">
+
+                <div class="proj-slide" data-project="chernika" data-name="Chernika" data-cat="Comercial" data-count="5"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/chernika/CHERNIKA%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/chernika/CHERNIKA%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/chernika/CHERNIKA%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/chernika/CHERNIKA%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/chernika/CHERNIKA%2005.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/chernika/CHERNIKA%2001.jpg?v=2"
+                    alt="Proyecto Chernika" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Comercial</span>
+                    <h4 class="proj-name">Chernika</h4>
+                    <span class="proj-count">5 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="laundry" data-name="Laundry" data-cat="Comercial" data-count="4"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/laundry/LAUNDRY%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/laundry/LAUNDRY%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/laundry/LAUNDRY%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/laundry/LAUNDRY%2004.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/laundry/LAUNDRY%2001.jpg?v=2"
+                    alt="Proyecto Laundry" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Comercial</span>
+                    <h4 class="proj-name">Laundry</h4>
+                    <span class="proj-count">4 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="nails-bar" data-name="Nails Bar" data-cat="Comercial"
+                  data-count="4"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/nails-bar/NAILS%20BAR%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/nails-bar/NAILS%20BAR%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/nails-bar/NAILS%20BAR%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/nails-bar/NAILS%20BAR%2004.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/comercial/nails-bar/NAILS%20BAR%2001.jpg?v=2"
+                    alt="Proyecto Nails Bar" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Comercial</span>
+                    <h4 class="proj-name">Nails Bar</h4>
+                    <span class="proj-count">4 imágenes</span>
+                  </div>
+                </div>
+
+              </div>
+              <button class="carousel-arrow carousel-arrow-right" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
           </div>
 
-          <div class="portfolio-item" data-category="comercial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
-              alt="Oficina Corporativa — diseño de espacios de trabajo" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Comercial</span>
-              <h3 class="proj-name">Oficina Corporativa</h3>
+          <!-- Experiencias Row -->
+          <div class="cat-row reveal" data-category="experiencias">
+            <div class="cat-row-header">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                Experiencias
+              </h3>
+              <span class="cat-count">3 proyectos</span>
+            </div>
+            <div class="proj-carousel-wrap">
+              <button class="carousel-arrow carousel-arrow-left" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div class="proj-carousel">
+
+                <div class="proj-slide" data-project="innova" data-name="Innova" data-cat="Experiencias" data-count="5"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/innova/INNOVA%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/innova/INNOVA%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/innova/INNOVA%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/innova/INNOVA%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/innova/INNOVA%2005.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/innova/INNOVA%2001.jpg?v=2"
+                    alt="Proyecto Innova" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Experiencias</span>
+                    <h4 class="proj-name">Innova</h4>
+                    <span class="proj-count">5 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="jumpingland" data-name="Jumpingland" data-cat="Experiencias"
+                  data-count="6"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2005.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2006.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/jumpingland/JUMPINGLAND%2001.jpg?v=2"
+                    alt="Proyecto Jumpingland" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Experiencias</span>
+                    <h4 class="proj-name">Jumpingland</h4>
+                    <span class="proj-count">6 imágenes</span>
+                  </div>
+                </div>
+
+                <div class="proj-slide" data-project="panaca" data-name="Panaca" data-cat="Experiencias" data-count="5"
+                  data-images="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/panaca/PANACA%2001.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/panaca/PANACA%2002.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/panaca/PANACA%2003.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/panaca/PANACA%2004.jpg|https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/panaca/PANACA%2005.jpg">
+                  <img
+                    src="https://jzskhrogiesqkeygtaqf.supabase.co/storage/v1/object/public/experiencias/panaca/PANACA%2001.jpg?v=2"
+                    alt="Proyecto Panaca" loading="lazy" />
+                  <div class="proj-slide-info">
+                    <span class="proj-cat">Experiencias</span>
+                    <h4 class="proj-name">Panaca</h4>
+                    <span class="proj-count">5 imágenes</span>
+                  </div>
+                </div>
+
+              </div>
+              <button class="carousel-arrow carousel-arrow-right" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
           </div>
 
-          <div class="portfolio-item" data-category="eventos" role="listitem">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80"
-              alt="Merlot Event — arquitectura de evento de gala" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Eventos</span>
-              <h3 class="proj-name">Merlot Event</h3>
+        </div><!-- /portfolio-browse -->
+
+        <!-- ═══ Project Detail (hidden by default) ═══ -->
+        <div id="proj-detail" class="proj-detail" style="display:none;">
+          <div class="proj-detail-topbar">
+            <button id="proj-detail-back" class="proj-detail-back" aria-label="Volver a proyectos">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Volver
+            </button>
+            <div class="proj-detail-meta">
+              <span id="proj-detail-cat" class="proj-cat"></span>
+              <h3 id="proj-detail-name" class="proj-name"></h3>
             </div>
+            <span id="proj-detail-counter" class="proj-detail-counter"></span>
           </div>
 
-          <div class="portfolio-item" data-category="comercial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80"
-              alt="Estética Vivante — diseño de spa y bienestar" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Comercial</span>
-              <h3 class="proj-name">Estética Vivante</h3>
+          <div class="proj-detail-hero-wrap">
+            <button class="proj-detail-arrow proj-detail-prev" aria-label="Imagen anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div class="proj-detail-hero">
+              <img id="proj-detail-img" src="" alt="" />
             </div>
+            <button class="proj-detail-arrow proj-detail-next" aria-label="Siguiente imagen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
           </div>
 
-          <div class="portfolio-item" data-category="eventos" role="listitem">
-            <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=600&q=80"
-              alt="Niebla Nocturna — evento temático nocturno" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Eventos</span>
-              <h3 class="proj-name">Niebla Nocturna</h3>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="residencial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80"
-              alt="Apartamento Daniela — diseño residencial íntimo" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Residencial</span>
-              <h3 class="proj-name">Apto. Daniela</h3>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="residencial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80"
-              alt="Apartamento 4A — diseño minimalista panorámico" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Residencial</span>
-              <h3 class="proj-name">Apartamento 4A</h3>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="comercial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80"
-              alt="Estudio BOE — espacio de trabajo creativo" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Comercial</span>
-              <h3 class="proj-name">Estudio BOE</h3>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="residencial" role="listitem">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
-              alt="Patio L — diseño de espacio exterior residencial" loading="lazy" />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="proj-cat">Residencial</span>
-              <h3 class="proj-name">Patio L</h3>
-            </div>
-          </div>
-
-        </div><!-- /masonry -->
+          <div id="proj-detail-thumbs" class="proj-detail-thumbs"></div>
+        </div>
 
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════
-         TESTIMONIOS
-    ════════════════════════════════════════ -->
-    <section id="testimonios" aria-labelledby="testimonios-heading">
-      <div class="container">
-
-        <div class="testimonios-header reveal">
-          <div class="section-label" style="color:rgba(255,255,255,.8);background:rgba(255,255,255,.1);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-            Clientes felices
-          </div>
-          <h2 id="testimonios-heading">Amados por nuestros clientes</h2>
-          <p>No solo construimos espacios; construimos relaciones basadas en confianza y transparencia.</p>
-        </div>
-
-        <div class="testimonios-grid">
-
-          <article class="testimonial-card reveal reveal-delay-1">
-            <div class="testimonial-stars" aria-label="5 estrellas">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
-            <p class="testimonial-text">"El equipo de Verza Design transformó nuestro apartamento completamente. La
-              promesa de 'llave en mano' fue real: no nos preocupamos por nada hasta que nos entregaron las llaves. El
-              resultado superó todas nuestras expectativas."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true">MC</div>
-              <div>
-                <p class="author-name">Maria Clara Ospina</p>
-                <p class="author-role">Cliente Residencial</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card reveal reveal-delay-2">
-            <div class="testimonial-stars" aria-label="5 estrellas">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
-            <p class="testimonial-text">"Profesionalismo en su máxima expresión. Los renders eran exactamente como el
-              resultado final. El Hotel Puerto Colombia quedó exactamente como lo soñamos. Altamente recomendado para
-              cualquier proyecto comercial."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true">AR</div>
-              <div>
-                <p class="author-name">Andrés Rodríguez</p>
-                <p class="author-role">Cliente Comercial</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial-card reveal reveal-delay-3">
-            <div class="testimonial-stars" aria-label="5 estrellas">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
-            <p class="testimonial-text">"El evento Merlot fue un sueño hecho realidad. Cada detalle fue pensado con amor
-              y precisión. Nuestros invitados todavía hablan de la atmósfera que crearon. ¡Son unas artistas!"</p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true">LV</div>
-              <div>
-                <p class="author-name">Laura Vásquez</p>
-                <p class="author-role">Evento Corporativo</p>
-              </div>
-            </div>
-          </article>
-
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+      <button class="lightbox-close" aria-label="Cerrar visor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <button class="lightbox-arrow lightbox-prev" aria-label="Imagen anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="28" height="28">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="" />
+        <div class="lightbox-caption">
+          <span id="lightbox-project"></span>
+          <span id="lightbox-counter"></span>
         </div>
       </div>
-    </section>
+      <button class="lightbox-arrow lightbox-next" aria-label="Siguiente imagen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="28" height="28">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+
+
 
     <!-- ════════════════════════════════════════
          CONTACTO
@@ -771,18 +924,13 @@
               </svg>
               Hablemos
             </div>
-            <h2 id="contacto-heading">¿Listo para transformar tu <em class="handwritten">espacio?</em></h2>
-            <p>Cuéntanos tu proyecto y agendamos un diagnóstico gratuito. Sin compromisos, solo buena vibra y grandes
+            <h2 id="contacto-heading">¿Listo para transformar tu <em class="brand-script"
+                style="font-size:1.1em;">espacio?</em></h2>
+            <p>Cuéntanos tu idea y agendamos una reunión para conocer tu proyecto. Sin compromisos, solo buena vibra y
+              grandes
               ideas.</p>
 
             <div class="contact-details">
-              <div class="contact-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Cra 54 No. 59-291, Barranquilla, Colombia</span>
-              </div>
               <div class="contact-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path
@@ -795,7 +943,7 @@
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-                <span>hola@verzadesign.co</span>
+                <span>proyectosverza@gmail.com</span>
               </div>
             </div>
 
@@ -924,15 +1072,15 @@
           <a href="#nosotras">Nosotras</a>
           <a href="#servicios">Servicios</a>
           <a href="#portafolio">Portafolio</a>
-          <a href="#testimonios">Testimonios</a>
+          <a href="#contacto">Contacto</a>
         </nav>
 
         <!-- Servicios -->
         <nav class="footer-col" aria-label="Servicios">
           <h4>Servicios</h4>
-          <a href="#servicios">Interiorismo</a>
-          <a href="#servicios">Arq. de Eventos</a>
-          <a href="#servicios">Gestión de Obra</a>
+          <a href="#servicios">Residencial</a>
+          <a href="#servicios">Comercial</a>
+          <a href="#servicios">Experiencias</a>
           <a href="#contacto">Diagnóstico Gratis</a>
         </nav>
 
@@ -941,27 +1089,28 @@
           <h4>Contáctanos</h4>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>Cra 54 No. 59-291<br>Barranquilla, Colombia</span>
-          </div>
-          <div class="contact-line">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path
                 d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" />
             </svg>
             <span>(311) 331-7983<br>(300) 247-1057</span>
           </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <span>proyectosverza@gmail.com</span>
+          </div>
         </div>
-
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2025 Verza Design. Todos los derechos reservados.</span>
-        <span>Hecho con <em class="handwritten" style="font-size:1.1em;color:var(--royal-blue);">amor</em> en
-          Barranquilla 🇨🇴</span>
-      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Verza Design. Todos los derechos reservados.</span>
+      <span>Hecho con <em class="handwritten" style="font-size:1.1em;color:var(--royal-blue);">amor</em> en
+        Barranquilla 🇨🇴</span>
+    </div>
     </div>
   </footer>
 
@@ -986,8 +1135,8 @@
       }
     }, { passive: true });
   </script>
-  <script src="js/main.js"></script>
-  <script src="js/interactions.js"></script>
+  <script src="js/main.js?v=2.0"></script>
+  <script src="js/interactions.js?v=2.0"></script>
 
 </body>
 
