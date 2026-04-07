@@ -2033,6 +2033,32 @@ img {
   color: var(--royal-blue);
 }
 
+.footer-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--whatsapp);
+  border-radius: 50px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-whatsapp-link:hover {
+  background: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.footer-whatsapp-link svg {
+  width: 16px;
+  height: 16px;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, .08);
   padding: 2rem clamp(1.5rem, 4vw, 4rem);
