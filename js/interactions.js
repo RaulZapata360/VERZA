@@ -83,18 +83,47 @@ window.addEventListener('scroll', handleParallax, { passive: true });
 // ── Header Scroll State ──────────────────────────────────────
 const header = document.getElementById('header');
 
+let lastScrollY = 0;
+let ticking = false;
+
 function updateHeader() {
   if (!header) return;
-  if (window.scrollY > 60) {
+  
+  const currentScrollY = window.scrollY;
+  
+  // Add scrolled class when past 60px
+  if (currentScrollY > 60) {
     header.classList.add('scrolled');
     header.classList.remove('hero-mode');
   } else {
     header.classList.remove('scrolled');
     header.classList.add('hero-mode');
   }
+  
+  // Hide header on scroll down, show on scroll up
+  if (currentScrollY > 100) {
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down - hide header
+      header.classList.add('header-hidden');
+    } else {
+      // Scrolling up - show header
+      header.classList.remove('header-hidden');
+    }
+  } else {
+    header.classList.remove('header-hidden');
+  }
+  
+  lastScrollY = currentScrollY;
+  ticking = false;
 }
 
-window.addEventListener('scroll', updateHeader, { passive: true });
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateHeader);
+    ticking = true;
+  }
+}, { passive: true });
+
 updateHeader(); // run on load
 
 // ── Stat Counter Animation ───────────────────────────────────
