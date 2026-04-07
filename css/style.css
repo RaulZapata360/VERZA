@@ -2770,9 +2770,6 @@ img {
 .gallery-filter-section {
   padding: 1.5rem 0;
   background: var(--pure-white);
-  position: sticky;
-  top: 100px;
-  z-index: 50;
   border-bottom: 1px solid var(--border-light);
 }
 
