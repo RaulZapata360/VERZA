@@ -32,7 +32,7 @@ if (cursor && cursorFollow) {
 
   // Magnetic hover effect on interactive elements
   const magneticEls = document.querySelectorAll(
-    'a, button, .proj-slide, .service-card, .filter-btn, .social-link, #whatsapp-fab'
+    'a, button, .service-card, .filter-btn, .social-link, #whatsapp-fab, .cascada-item'
   );
 
   magneticEls.forEach(el => {
