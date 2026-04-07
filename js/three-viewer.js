@@ -44,6 +44,8 @@
   let isLoading = false;
   let animationId = null;
   let cameraAnimation = null;
+  let raycaster, mouse;
+  let isFullscreen = false;
 
   const loaderEl = document.getElementById('viewer-loader');
   const modelSelector = document.getElementById('model-selector');
@@ -93,6 +95,10 @@
     renderer.toneMappingExposure = 1;
     container.appendChild(renderer.domElement);
 
+    // Raycaster for click-to-orbit
+    raycaster = new THREE.Raycaster();
+    mouse = new THREE.Vector2();
+
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
@@ -115,6 +121,8 @@
 
     window.addEventListener('resize', onWindowResize);
     setupViewControls();
+    setupFullscreenControl();
+    setupClickToOrbit();
   }
 
   function setupLights() {
@@ -349,6 +357,136 @@
         animateCameraToView(PREDEFINED_VIEWS[btn.dataset.view], 600);
       }
     });
+  }
+
+  function setupFullscreenControl() {
+    const fullscreenBtn = document.createElement('button');
+    fullscreenBtn.className = 'fullscreen-btn';
+    fullscreenBtn.setAttribute('title', 'Pantalla completa');
+    fullscreenBtn.innerHTML = `
+      <svg class="icon-expand" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+      </svg>
+      <svg class="icon-compress" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+        <path d="M4 14h6m0 0v6m0-6L3 21M20 10h-6m0 0V4m0 6l7-7M14 20h6m0 0v-6m0 6l-7-7"/>
+      </svg>
+    `;
+
+    container.appendChild(fullscreenBtn);
+
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  }
+
+  function handleFullscreenChange() {
+    const fullscreenBtn = container.querySelector('.fullscreen-btn');
+    if (!fullscreenBtn) return;
+
+    const isFull = document.fullscreenElement || document.webkitFullscreenElement;
+    isFullscreen = isFull;
+
+    const expandIcon = fullscreenBtn.querySelector('.icon-expand');
+    const compressIcon = fullscreenBtn.querySelector('.icon-compress');
+
+    if (isFull) {
+      expandIcon.style.display = 'none';
+      compressIcon.style.display = 'block';
+      container.classList.add('is-fullscreen');
+    } else {
+      expandIcon.style.display = 'block';
+      compressIcon.style.display = 'none';
+      container.classList.remove('is-fullscreen');
+    }
+  }
+
+  function setupClickToOrbit() {
+    const canvas = renderer.domElement;
+
+    canvas.addEventListener('click', onCanvasClick);
+  }
+
+  function onCanvasClick(event) {
+    if (!model || isLoading || cameraAnimation) return;
+
+    const rect = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObject(model, true);
+
+    if (intersects.length > 0) {
+      const point = intersects[0].point;
+      const normal = intersects[0].face ? intersects[0].face.normal : null;
+      
+      animateCameraToClickedPoint(point, normal);
+    }
+  }
+
+  function animateCameraToClickedPoint(targetPoint, normal) {
+    cancelCurrentAnimation();
+
+    const startPosition = camera.position.clone();
+    const startTarget = controls.target.clone();
+
+    const targetVec = targetPoint.clone();
+    const directionFromCenter = targetVec.clone().sub(startTarget).normalize();
+
+    const currentSpherical = new THREE.Spherical();
+    currentSpherical.setFromVector3(startPosition.clone().sub(startTarget));
+
+    const targetSpherical = new THREE.Spherical();
+    const cameraOffset = directionFromCenter.multiplyScalar(2.5);
+    const newCameraPos = targetVec.clone().add(cameraOffset);
+    targetSpherical.setFromVector3(newCameraPos.clone().sub(targetVec));
+
+    const duration = 800;
+    const startTime = performance.now();
+    const easeFn = easing.easeOutCubic;
+
+    function update() {
+      const now = performance.now();
+      const elapsed = now - startTime;
+      let progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeFn(progress);
+
+      const newTheta = currentSpherical.theta + (targetSpherical.theta - currentSpherical.theta) * easedProgress;
+      const newPhi = Math.max(0.2, Math.min(Math.PI - 0.2, currentSpherical.phi + (targetSpherical.phi - currentSpherical.phi) * easedProgress));
+      const newRadius = currentSpherical.radius + (targetSpherical.radius - currentSpherical.radius) * easedProgress;
+
+      const interpolatedTarget = startTarget.clone().lerp(targetVec, easedProgress);
+      
+      camera.position.setFromSphericalCoords(newRadius, newPhi, newTheta).add(interpolatedTarget);
+      controls.target.lerpVectors(startTarget, targetVec, easedProgress);
+      controls.update();
+
+      if (progress < 1) {
+        cameraAnimation = requestAnimationFrame(update);
+      } else {
+        cameraAnimation = null;
+      }
+    }
+
+    cameraAnimation = requestAnimationFrame(update);
   }
 
   function showLoader(show) {

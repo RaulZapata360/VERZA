@@ -367,3 +367,105 @@
     height: 14px;
   }
 }
+
+/* ════════════════════════════════════════
+   Fullscreen Button
+   ════════════════════════════════════════ */
+
+.fullscreen-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(15, 20, 36, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.25s ease;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(220, 255, 0, 0.2);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: scale(1.05);
+}
+
+.fullscreen-btn:active {
+  transform: scale(0.95);
+}
+
+.fullscreen-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.fullscreen-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Fullscreen state */
+.three-viewer-container.is-fullscreen {
+  border-radius: 0;
+  max-width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #000;
+}
+
+.three-viewer-container.is-fullscreen .fullscreen-btn {
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.three-viewer-container.is-fullscreen .fullscreen-btn:hover {
+  background: rgba(220, 255, 0, 0.3);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.three-viewer-container.is-fullscreen .viewer-controls {
+  bottom: 1.5rem;
+}
+
+.three-viewer-container.is-fullscreen canvas {
+  height: 100% !important;
+}
+
+/* Click indicator animation */
+@keyframes click-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.click-indicator {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  pointer-events: none;
+  animation: click-pulse 0.5s ease-out forwards;
+  z-index: 100;
+}
