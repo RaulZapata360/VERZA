@@ -2768,19 +2768,23 @@ img {
 
 /* ── Filter Bar ── */
 .gallery-filter-section {
-  padding: 2rem 0 0;
+  padding: 1.5rem 0;
   background: var(--pure-white);
-  position: sticky;
+  position: fixed;
   top: 100px;
+  left: 0;
+  right: 0;
   z-index: 50;
   border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .gallery-filter-bar {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  padding: 0.75rem 0;
+  justify-content: center;
+  padding: 0.75rem clamp(1rem, 5vw, 3rem);
 }
 
 .gallery-filter-btn {
@@ -2820,6 +2824,8 @@ img {
 
 .cascade-category {
   margin-bottom: 5rem;
+  padding-top: 160px;
+  margin-top: -160px;
 }
 
 .cascade-category.hidden {
