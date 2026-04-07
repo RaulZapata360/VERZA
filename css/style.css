@@ -2770,13 +2770,10 @@ img {
 .gallery-filter-section {
   padding: 1.5rem 0;
   background: var(--pure-white);
-  position: fixed;
+  position: sticky;
   top: 100px;
-  left: 0;
-  right: 0;
   z-index: 50;
   border-bottom: 1px solid var(--border-light);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .gallery-filter-bar {
@@ -2824,8 +2821,6 @@ img {
 
 .cascade-category {
   margin-bottom: 5rem;
-  padding-top: 160px;
-  margin-top: -160px;
 }
 
 .cascade-category.hidden {
