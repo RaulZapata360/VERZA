@@ -434,14 +434,11 @@
   width: 100% !important;
   height: 100% !important;
   display: block;
+  cursor: grab;
 }
 
-.three-viewer-container.is-fullscreen .viewer-loader {
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.three-viewer-container.is-fullscreen .viewer-controls {
-  bottom: 20px;
+.three-viewer-container.is-fullscreen canvas:active {
+  cursor: grabbing;
 }
 
 .three-viewer-container.is-fullscreen .fullscreen-btn {

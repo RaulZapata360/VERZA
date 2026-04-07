@@ -79,7 +79,7 @@
     const height = 500;
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8f8f4);
+    scene.background = new THREE.Color(0x0a0a0a);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(3, 2, 5);
