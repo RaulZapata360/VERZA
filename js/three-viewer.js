@@ -423,7 +423,7 @@
     if (!container || !camera || !renderer) return;
     
     const width = container.clientWidth;
-    const height = 500;
+    const height = container.clientHeight || 500;
     
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
