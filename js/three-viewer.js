@@ -12,7 +12,7 @@
     return;
   }
 
-  const MODEL_PATH = 'Galeria/Modelos 3D/1°/';
+  const MODEL_PATH = 'https://sxqxvdxtnouwfcdwsoai.supabase.co/storage/v1/object/public/Verza/Principal/3D/';
   const GLTFLoader = THREE.GLTFLoader;
   
   const models = [
