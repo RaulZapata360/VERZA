@@ -4,7 +4,8 @@
    ════════════════════════════════════════ */
 
 #visor-3d {
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding-bottom: 0;
   background: var(--pure-white);
 }
 
@@ -234,6 +235,7 @@
 .viewer-instructions {
   text-align: center;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .viewer-instructions span {
