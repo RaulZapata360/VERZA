@@ -44,7 +44,6 @@
   let isLoading = false;
   let animationId = null;
   let cameraAnimation = null;
-  let raycaster, mouse;
   let isFullscreen = false;
 
   const loaderEl = document.getElementById('viewer-loader');
@@ -95,10 +94,6 @@
     renderer.toneMappingExposure = 1;
     container.appendChild(renderer.domElement);
 
-    // Raycaster for click-to-orbit
-    raycaster = new THREE.Raycaster();
-    mouse = new THREE.Vector2();
-
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
@@ -122,7 +117,6 @@
     window.addEventListener('resize', onWindowResize);
     setupViewControls();
     setupFullscreenControl();
-    setupClickToOrbit();
   }
 
   function setupLights() {
@@ -410,83 +404,13 @@
       expandIcon.style.display = 'none';
       compressIcon.style.display = 'block';
       container.classList.add('is-fullscreen');
+      setTimeout(onWindowResize, 100);
     } else {
       expandIcon.style.display = 'block';
       compressIcon.style.display = 'none';
       container.classList.remove('is-fullscreen');
+      setTimeout(onWindowResize, 100);
     }
-  }
-
-  function setupClickToOrbit() {
-    const canvas = renderer.domElement;
-
-    canvas.addEventListener('click', onCanvasClick);
-  }
-
-  function onCanvasClick(event) {
-    if (!model || isLoading || cameraAnimation) return;
-
-    const rect = renderer.domElement.getBoundingClientRect();
-    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
-    raycaster.setFromCamera(mouse, camera);
-
-    const intersects = raycaster.intersectObject(model, true);
-
-    if (intersects.length > 0) {
-      const point = intersects[0].point;
-      const normal = intersects[0].face ? intersects[0].face.normal : null;
-      
-      animateCameraToClickedPoint(point, normal);
-    }
-  }
-
-  function animateCameraToClickedPoint(targetPoint, normal) {
-    cancelCurrentAnimation();
-
-    const startPosition = camera.position.clone();
-    const startTarget = controls.target.clone();
-
-    const targetVec = targetPoint.clone();
-    const directionFromCenter = targetVec.clone().sub(startTarget).normalize();
-
-    const currentSpherical = new THREE.Spherical();
-    currentSpherical.setFromVector3(startPosition.clone().sub(startTarget));
-
-    const targetSpherical = new THREE.Spherical();
-    const cameraOffset = directionFromCenter.multiplyScalar(2.5);
-    const newCameraPos = targetVec.clone().add(cameraOffset);
-    targetSpherical.setFromVector3(newCameraPos.clone().sub(targetVec));
-
-    const duration = 800;
-    const startTime = performance.now();
-    const easeFn = easing.easeOutCubic;
-
-    function update() {
-      const now = performance.now();
-      const elapsed = now - startTime;
-      let progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeFn(progress);
-
-      const newTheta = currentSpherical.theta + (targetSpherical.theta - currentSpherical.theta) * easedProgress;
-      const newPhi = Math.max(0.2, Math.min(Math.PI - 0.2, currentSpherical.phi + (targetSpherical.phi - currentSpherical.phi) * easedProgress));
-      const newRadius = currentSpherical.radius + (targetSpherical.radius - currentSpherical.radius) * easedProgress;
-
-      const interpolatedTarget = startTarget.clone().lerp(targetVec, easedProgress);
-      
-      camera.position.setFromSphericalCoords(newRadius, newPhi, newTheta).add(interpolatedTarget);
-      controls.target.lerpVectors(startTarget, targetVec, easedProgress);
-      controls.update();
-
-      if (progress < 1) {
-        cameraAnimation = requestAnimationFrame(update);
-      } else {
-        cameraAnimation = null;
-      }
-    }
-
-    cameraAnimation = requestAnimationFrame(update);
   }
 
   function showLoader(show) {
