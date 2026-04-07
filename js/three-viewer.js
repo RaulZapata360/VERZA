@@ -76,7 +76,7 @@
 
   function init() {
     const width = container.clientWidth;
-    const height = 500;
+    const height = container.clientHeight || 400;
 
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x0a0a0a);

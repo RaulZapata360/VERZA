@@ -1800,7 +1800,7 @@ img {
 
 /* ── Contact / CTA Section ── */
 #contacto {
-  padding: clamp(5rem, 10vw, 9rem) 0;
+  padding: clamp(3rem, 6vw, 5rem) 0;
   background: var(--smoke-white);
 }
 
