@@ -1,6 +1,7 @@
 /* ============================================================
    VERZA DESIGN — 3D Viewer
-   Three.js Interactive 3D Model Viewer with Hotspots
+   Three.js Interactive 3D Model Viewer with Smooth Camera Controls
+   Based on modelviewer.dev camera mechanics
    ============================================================ */
 
 (function initThreeViewer() {
@@ -14,7 +15,21 @@
 
   const MODEL_PATH = 'https://sxqxvdxtnouwfcdwsoai.supabase.co/storage/v1/object/public/Verza/Principal/3D/';
   const GLTFLoader = THREE.GLTFLoader;
-  
+
+  const ANIMATION_CONFIG = {
+    duration: 1200,
+    interpolationDecay: 42,
+    easing: 'easeInOutCubic'
+  };
+
+  const PREDEFINED_VIEWS = {
+    default: { orbit: { theta: 0.5, phi: 1.1, radius: 4 }, target: { x: 0, y: 0, z: 0 } },
+    front: { orbit: { theta: 0, phi: 1.57, radius: 3 }, target: { x: 0, y: 0.5, z: 0 } },
+    top: { orbit: { theta: 0, phi: 0.1, radius: 5 }, target: { x: 0, y: 0, z: 0 } },
+    side: { orbit: { theta: 1.57, phi: 1.2, radius: 3.5 }, target: { x: 0, y: 0.5, z: 0 } },
+    diagonal: { orbit: { theta: 0.8, phi: 0.9, radius: 4 }, target: { x: 0, y: 0, z: 0 } }
+  };
+
   const models = [
     {
       id: 'demo_n1',
@@ -25,12 +40,38 @@
   ];
 
   let currentModel = models[0];
-  let scene, camera, renderer, controls, model, hotspotElements = [];
+  let scene, camera, renderer, controls, model;
   let isLoading = false;
   let animationId = null;
+  let cameraAnimation = null;
 
   const loaderEl = document.getElementById('viewer-loader');
   const modelSelector = document.getElementById('model-selector');
+
+  // Easing functions
+  const easing = {
+    linear: t => t,
+    easeInQuad: t => t * t,
+    easeOutQuad: t => t * (2 - t),
+    easeInOutQuad: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
+    easeInCubic: t => t * t * t,
+    easeOutCubic: t => (--t) * t * t + 1,
+    easeInOutCubic: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+    easeInQuart: t => t * t * t * t,
+    easeOutQuart: t => 1 - (--t) * t * t * t,
+    easeInOutQuart: t => t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t,
+    easeInExpo: t => t === 0 ? 0 : Math.pow(2, 10 * (t - 1)),
+    easeOutExpo: t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t),
+    easeInOutExpo: t => {
+      if (t === 0 || t === 1) return t;
+      if (t < 0.5) return Math.pow(2, 20 * t - 10) / 2;
+      return (2 - Math.pow(2, -20 * t + 10)) / 2;
+    },
+    easeOutElastic: t => {
+      const c4 = (2 * Math.PI) / 3;
+      return t === 0 ? 0 : t === 1 ? 1 : Math.pow(2, -10 * t) * Math.sin((t * 10 - 0.75) * c4) + 1;
+    }
+  };
 
   function init() {
     const width = container.clientWidth;
@@ -42,45 +83,63 @@
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(3, 2, 5);
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(width, height);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1;
     container.appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.minDistance = 1;
-    controls.maxDistance = 20;
+    controls.dampingFactor = 0.08;
+    controls.minDistance = 0.5;
+    controls.maxDistance = 15;
     controls.enablePan = true;
+    controls.panSpeed = 0.8;
+    controls.rotateSpeed = 0.8;
+    controls.zoomSpeed = 1.2;
     controls.autoRotate = false;
-    controls.autoRotateSpeed = 1;
+    controls.autoRotateSpeed = 0.5;
+
+    // Add smooth stop behavior
+    controls.enableSmoothing = true;
+    controls.smoothingFactor = 0.08;
 
     setupLights();
     loadModel(currentModel.file);
     animate();
 
     window.addEventListener('resize', onWindowResize);
+    setupViewControls();
   }
 
   function setupLights() {
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(5, 10, 7);
-    directionalLight.castShadow = true;
-    directionalLight.shadow.mapSize.width = 2048;
-    directionalLight.shadow.mapSize.height = 2048;
-    scene.add(directionalLight);
+    const mainLight = new THREE.DirectionalLight(0xffffff, 0.9);
+    mainLight.position.set(5, 10, 7);
+    mainLight.castShadow = true;
+    mainLight.shadow.mapSize.width = 2048;
+    mainLight.shadow.mapSize.height = 2048;
+    mainLight.shadow.camera.near = 0.5;
+    mainLight.shadow.camera.far = 50;
+    mainLight.shadow.bias = -0.0001;
+    scene.add(mainLight);
 
-    const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+    const fillLight = new THREE.DirectionalLight(0xb4c6e7, 0.4);
     fillLight.position.set(-5, 5, -5);
     scene.add(fillLight);
 
-    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.4);
+    const rimLight = new THREE.DirectionalLight(0xffffff, 0.3);
+    rimLight.position.set(0, 5, -10);
+    scene.add(rimLight);
+
+    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.3);
     scene.add(hemisphereLight);
   }
 
@@ -89,6 +148,7 @@
     isLoading = true;
     
     showLoader(true);
+    cancelCurrentAnimation();
 
     const loader = new THREE.GLTFLoader();
     
@@ -102,8 +162,12 @@
               if (child.geometry) child.geometry.dispose();
               if (child.material) {
                 if (Array.isArray(child.material)) {
-                  child.material.forEach(m => m.dispose());
+                  child.material.forEach(m => {
+                    if (m.map) m.map.dispose();
+                    m.dispose();
+                  });
                 } else {
+                  if (child.material.map) child.material.map.dispose();
                   child.material.dispose();
                 }
               }
@@ -127,24 +191,25 @@
           if (child.isMesh) {
             child.castShadow = true;
             child.receiveShadow = true;
+            if (child.material) {
+              child.material.envMapIntensity = 0.5;
+            }
           }
         });
 
         scene.add(model);
         
-        fitCameraToModel();
+        animateCameraToView(PREDEFINED_VIEWS.default, 1500);
         
         isLoading = false;
         showLoader(false);
-        
-        if (currentModel.hotspots && currentModel.hotspots.length > 0) {
-          createHotspots(currentModel.hotspots);
-        }
       },
       function(xhr) {
-        const progress = (xhr.loaded / xhr.total * 100).toFixed(0);
-        if (loaderEl) {
-          loaderEl.textContent = `Cargando... ${progress}%`;
+        if (xhr.lengthComputable) {
+          const progress = (xhr.loaded / xhr.total * 100).toFixed(0);
+          if (loaderEl) {
+            loaderEl.textContent = `Cargando modelo... ${progress}%`;
+          }
         }
       },
       function(error) {
@@ -158,94 +223,132 @@
     );
   }
 
-  function fitCameraToModel() {
-    if (!model) return;
-    
-    const box = new THREE.Box3().setFromObject(model);
-    const center = box.getCenter(new THREE.Vector3());
-    const size = box.getSize(new THREE.Vector3());
-    
-    const maxDim = Math.max(size.x, size.y, size.z);
-    const fov = camera.fov * (Math.PI / 180);
-    let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
-    cameraZ *= 1.5;
-    
-    camera.position.set(center.x, center.y + size.y * 0.3, center.z + cameraZ);
-    camera.lookAt(center);
-    
-    controls.target.copy(center);
-    controls.update();
-  }
+  function animateCameraToView(viewConfig, duration = ANIMATION_CONFIG.duration, onComplete = null) {
+    cancelCurrentAnimation();
 
-  function createHotspots(hotspots) {
-    clearHotspots();
-    
-    hotspots.forEach((hs, index) => {
-      const btn = document.createElement('button');
-      btn.className = 'viewer-hotspot';
-      btn.setAttribute('data-position', hs.position);
-      btn.setAttribute('data-normal', hs.normal || '0 1 0');
-      
-      const dot = document.createElement('div');
-      dot.className = 'hotspot-dot';
-      dot.style.setProperty('--dot-color', hs.color || '#DCFF00');
-      
-      const card = document.createElement('div');
-      card.className = 'hotspot-card';
-      card.innerHTML = `
-        <strong class="hotspot-label">${hs.label}</strong>
-        <p class="hotspot-content">${hs.content || ''}</p>
-      `;
-      
-      btn.appendChild(dot);
-      btn.appendChild(card);
-      
-      const pos = hs.position.split(' ').map(Number);
-      const position = new THREE.Vector3(pos[0], pos[1], pos[2]);
-      
-      btn.addEventListener('click', () => {
-        animateCameraToPosition(position);
-      });
-      
-      btn.style.display = 'none';
-      container.appendChild(btn);
-      hotspotElements.push({ element: btn, position: position });
-    });
-  }
-
-  function clearHotspots() {
-    hotspotElements.forEach(hs => {
-      if (hs.element && hs.element.parentNode) {
-        hs.element.parentNode.removeChild(hs.element);
-      }
-    });
-    hotspotElements = [];
-  }
-
-  function animateCameraToPosition(targetPos) {
-    const startPos = camera.position.clone();
+    const startPosition = camera.position.clone();
     const startTarget = controls.target.clone();
-    const endTarget = targetPos.clone();
-    const endPos = targetPos.clone().add(new THREE.Vector3(0, 0, 3));
-    
-    const duration = 1000;
-    const startTime = Date.now();
-    
-    function updateCamera() {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+
+    const spherical = new THREE.Spherical();
+    spherical.setFromVector3(startPosition.clone().sub(controls.target));
+
+    const endTheta = viewConfig.orbit.theta;
+    const endPhi = viewConfig.orbit.phi;
+    const endRadius = viewConfig.orbit.radius;
+    const endTarget = new THREE.Vector3(viewConfig.target.x, viewConfig.target.y, viewConfig.target.z);
+
+    const startTime = performance.now();
+    const easeFn = easing[ANIMATION_CONFIG.easing] || easing.easeInOutCubic;
+
+    function update() {
+      const now = performance.now();
+      const elapsed = now - startTime;
+      let progress = Math.min(elapsed / duration, 1);
       
-      camera.position.lerpVectors(startPos, endPos, eased);
-      controls.target.lerpVectors(startTarget, endTarget, eased);
+      const easedProgress = easeFn(progress);
+
+      const newTheta = spherical.theta + (endTheta - spherical.theta) * easedProgress;
+      const newPhi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi + (endPhi - spherical.phi) * easedProgress));
+      const newRadius = spherical.radius + (endRadius - spherical.radius) * easedProgress;
+
+      const targetPos = endTarget.clone();
+      camera.position.setFromSphericalCoords(newRadius, newPhi, newTheta).add(targetPos);
+      controls.target.lerpVectors(startTarget, endTarget, easedProgress);
       controls.update();
-      
+
       if (progress < 1) {
-        requestAnimationFrame(updateCamera);
+        cameraAnimation = requestAnimationFrame(update);
+      } else {
+        cameraAnimation = null;
+        if (onComplete) onComplete();
       }
     }
+
+    cameraAnimation = requestAnimationFrame(update);
+  }
+
+  function animateCameraToPosition(targetPos, duration = ANIMATION_CONFIG.duration) {
+    const startPosition = camera.position.clone();
+    const startTarget = controls.target.clone();
     
-    updateCamera();
+    const direction = targetPos.clone().sub(startTarget).normalize();
+    const distance = startPosition.distanceTo(startTarget);
+    const endRadius = Math.max(distance * 0.6, 1.5);
+    
+    const spherical = new THREE.Spherical();
+    spherical.setFromVector3(startPosition.clone().sub(startTarget));
+    
+    const thetaOffset = Math.atan2(direction.x, direction.z);
+    const phiOffset = Math.acos(Math.max(-1, Math.min(1, direction.y)));
+
+    const viewConfig = {
+      orbit: {
+        theta: spherical.theta + (thetaOffset - spherical.theta) * 0.5,
+        phi: spherical.phi + (phiOffset - spherical.phi) * 0.5,
+        radius: endRadius
+      },
+      target: {
+        x: targetPos.x,
+        y: targetPos.y,
+        z: targetPos.z
+      }
+    };
+
+    animateCameraToView(viewConfig, duration);
+  }
+
+  function cancelCurrentAnimation() {
+    if (cameraAnimation) {
+      cancelAnimationFrame(cameraAnimation);
+      cameraAnimation = null;
+    }
+  }
+
+  function resetView() {
+    animateCameraToView(PREDEFINED_VIEWS.default, 800);
+  }
+
+  function setupViewControls() {
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'viewer-controls';
+    controlsContainer.innerHTML = `
+      <button class="view-control-btn" data-view="default" title="Vista predeterminada">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </button>
+      <button class="view-control-btn" data-view="front" title="Vista frontal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+        </svg>
+      </button>
+      <button class="view-control-btn" data-view="top" title="Vista superior">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v8M8 12h8"/>
+        </svg>
+      </button>
+      <button class="view-control-btn" data-view="side" title="Vista lateral">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <button class="view-control-btn" data-view="diagonal" title="Vista diagonal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"/>
+        </svg>
+      </button>
+    `;
+
+    container.appendChild(controlsContainer);
+
+    controlsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.view-control-btn');
+      if (btn && PREDEFINED_VIEWS[btn.dataset.view]) {
+        animateCameraToView(PREDEFINED_VIEWS[btn.dataset.view], 600);
+      }
+    });
   }
 
   function showLoader(show) {
@@ -272,48 +375,16 @@
       controls.update();
     }
     
-    updateHotspotPositions();
-    
     if (renderer && scene && camera) {
       renderer.render(scene, camera);
     }
   }
 
-  function updateHotspotPositions() {
-    if (!model || hotspotElements.length === 0) return;
-    
-    hotspotElements.forEach(hs => {
-      const pos = hs.position.clone();
-      model.localToWorld(pos);
-      
-      pos.project(camera);
-      
-      const width = container.clientWidth;
-      const height = 500;
-      
-      const x = (pos.x * 0.5 + 0.5) * width;
-      const y = (-pos.y * 0.5 + 0.5) * height;
-      
-      const isVisible = pos.z < 1 && 
-                        x > 0 && x < width && 
-                        y > 0 && y < height;
-      
-      hs.element.style.display = isVisible ? 'block' : 'none';
-      hs.element.style.left = x + 'px';
-      hs.element.style.top = y + 'px';
-      
-      const dot = hs.element.querySelector('.hotspot-dot');
-      if (dot) {
-        dot.style.opacity = isVisible ? '1' : '0.3';
-      }
-    });
-  }
-
   function selectModel(modelId) {
-    const model = models.find(m => m.id === modelId);
-    if (model) {
-      currentModel = model;
-      loadModel(model.file);
+    const modelData = models.find(m => m.id === modelId);
+    if (modelData) {
+      currentModel = modelData;
+      loadModel(modelData.file);
       
       document.querySelectorAll('.model-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.model === modelId);
