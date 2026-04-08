@@ -2099,6 +2099,15 @@ img {
   flex-wrap: wrap;
 }
 
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
 /* ── WhatsApp FAB ── */
 #whatsapp-fab {
   position: fixed;
