@@ -33,7 +33,7 @@
   --glow-gold: 0 0 30px rgba(201, 169, 110, .35), 0 4px 16px rgba(201, 169, 110, .20);
 
   --font-sans: 'Manrope', sans-serif;
-  --font-script: 'Dancing Script', cursive;
+  --font-script: 'Style Script', cursive;
   --font-brand-script: 'Nothing You Could Do', cursive;
 
   --radius-sm: 6px;
@@ -959,7 +959,7 @@ img {
   gap: 2.5rem;
   align-items: center;
   padding: 3rem;
-  background: var(--gradient-dark);
+  background: linear-gradient(160deg, #0a1a3a 0%, #122d9a 100%);
   border-color: transparent;
   color: white;
   box-shadow: var(--glow-blue);
@@ -2323,7 +2323,7 @@ img {
 /* ── Video Section ── */
 #proceso {
   padding: clamp(3rem, 5vw, 5rem) 0;
-  background: #2323AF;
+  background: #0f1e4d;
   position: relative;
   overflow: hidden;
 }
