@@ -86,17 +86,36 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        
+        const nombre = document.getElementById('nombre')?.value || '';
+        const telefono = document.getElementById('telefono')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const servicio = document.getElementById('servicio')?.value || '';
+        const mensaje = document.getElementById('mensaje')?.value || '';
+        
+        const telefonoWhatsApp = '573113317983';
+        
+        let textoWhatsApp = `*Nueva consulta desde la web*%0A%0A`;
+        if (nombre) textoWhatsApp += `*Nombre:* ${nombre}%0A`;
+        if (telefono) textoWhatsApp += `*Teléfono:* ${telefono}%0A`;
+        if (email) textoWhatsApp += `*Email:* ${email}%0A`;
+        if (servicio) textoWhatsApp += `*Servicio de interés:* ${servicio}%0A`;
+        if (mensaje) textoWhatsApp += `%0A*Mensaje:* ${mensaje}`;
+        
+        const whatsappUrl = `https://wa.me/${telefonoWhatsApp}?text=${textoWhatsApp}`;
+        
+        window.open(whatsappUrl, '_blank');
+        
         const btn = contactForm.querySelector('[type="submit"]');
         const original = btn.textContent;
-        btn.textContent = '✓ Mensaje enviado';
+        btn.textContent = '✓ Abriendo WhatsApp...';
         btn.disabled = true;
-        btn.style.background = '#22c55e';
+        
         setTimeout(() => {
             btn.textContent = original;
             btn.disabled = false;
-            btn.style.background = '';
             contactForm.reset();
-        }, 3000);
+        }, 2000);
     });
 }
 

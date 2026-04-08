@@ -10,6 +10,7 @@
     if (!lightbox) return;
 
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxLoader = document.getElementById('lightbox-loader');
     const lightboxProject = document.getElementById('lightbox-project');
     const lightboxCounter = document.getElementById('lightbox-counter');
     const lightboxClose = lightbox.querySelector('.lightbox-close');
@@ -62,9 +63,25 @@
 
     function updateLightbox() {
         if (!currentImages.length) return;
+        
+        // Show loader, hide image until loaded
+        lightboxLoader?.classList.add('active');
+        lightboxImg.style.opacity = '0.5';
+        
         lightboxImg.src = currentImages[currentIdx];
         lightboxProject.textContent = currentProjectName;
         lightboxCounter.textContent = `${currentIdx + 1} / ${currentImages.length}`;
+        
+        // Hide loader when image loads
+        lightboxImg.onload = function() {
+            lightboxLoader?.classList.remove('active');
+            lightboxImg.style.opacity = '1';
+        };
+        
+        lightboxImg.onerror = function() {
+            lightboxLoader?.classList.remove('active');
+            lightboxImg.style.opacity = '1';
+        };
     }
 
     function closeLightbox() {

@@ -33,7 +33,7 @@
   --glow-gold: 0 0 30px rgba(201, 169, 110, .35), 0 4px 16px rgba(201, 169, 110, .20);
 
   --font-sans: 'Manrope', sans-serif;
-  --font-script: 'Dancing Script', cursive;
+  --font-script: 'Style Script', cursive;
   --font-brand-script: 'Nothing You Could Do', cursive;
 
   --radius-sm: 6px;
@@ -959,7 +959,7 @@ img {
   gap: 2.5rem;
   align-items: center;
   padding: 3rem;
-  background: var(--gradient-dark);
+  background: linear-gradient(160deg, #0a1a3a 0%, #122d9a 100%);
   border-color: transparent;
   color: white;
   box-shadow: var(--glow-blue);
@@ -1608,34 +1608,62 @@ img {
   max-width: 90vw;
   max-height: 90vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.lightbox-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.lightbox-loader.active {
+  display: flex;
 }
 
 .lightbox-content img {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: calc(90vh - 60px);
   object-fit: contain;
   border-radius: var(--radius-lg);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
 }
 
 .lightbox-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   text-align: center;
-  margin-top: 1.5rem;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
   color: white;
+  width: 100%;
 }
 
 #lightbox-project {
   display: block;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: var(--accent-gold);
+  font-weight: 700;
   margin-bottom: 5px;
 }
 
 #lightbox-counter {
-  font-size: 0.9rem;
-  opacity: 0.6;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -2033,14 +2061,42 @@ img {
   color: var(--royal-blue);
 }
 
+.footer-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--whatsapp);
+  border-radius: 50px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-whatsapp-link:hover {
+  background: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.footer-whatsapp-link svg {
+  width: 16px;
+  height: 16px;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, .08);
-  padding-top: 2rem;
+  padding: 2rem clamp(1.5rem, 4vw, 4rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, .35);
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* ── WhatsApp FAB ── */
@@ -2115,6 +2171,13 @@ img {
 #whatsapp-fab:hover .wa-tooltip {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
+}
+
+#whatsapp-fab.fab-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: all 0.3s ease;
 }
 
 /* ── Reveal Animations ── */
@@ -2251,8 +2314,13 @@ img {
 
   .footer-bottom {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
     text-align: center;
+    padding: 1.5rem clamp(1rem, 3vw, 2rem);
+  }
+
+  .footer-bottom span {
+    word-break: break-word;
   }
 
   body {
@@ -2283,7 +2351,7 @@ img {
 /* ── Video Section ── */
 #proceso {
   padding: clamp(3rem, 5vw, 5rem) 0;
-  background: #2323AF;
+  background: #0f1e4d;
   position: relative;
   overflow: hidden;
 }

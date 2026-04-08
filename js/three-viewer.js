@@ -23,11 +23,11 @@
   };
 
   const PREDEFINED_VIEWS = {
-    default: { orbit: { theta: 0.5, phi: 1.1, radius: 4 }, target: { x: 0, y: 0, z: 0 } },
-    front: { orbit: { theta: 0, phi: 1.57, radius: 3 }, target: { x: 0, y: 0.5, z: 0 } },
-    top: { orbit: { theta: 0, phi: 0.1, radius: 5 }, target: { x: 0, y: 0, z: 0 } },
-    side: { orbit: { theta: 1.57, phi: 1.2, radius: 3.5 }, target: { x: 0, y: 0.5, z: 0 } },
-    diagonal: { orbit: { theta: 0.8, phi: 0.9, radius: 4 }, target: { x: 0, y: 0, z: 0 } }
+    default: { orbit: { theta: 0.5, phi: 1.1, radius: 6 }, target: { x: 0, y: 0, z: 0 } },
+    front: { orbit: { theta: 0, phi: 1.57, radius: 5 }, target: { x: 0, y: 0.5, z: 0 } },
+    top: { orbit: { theta: 0, phi: 0.1, radius: 8 }, target: { x: 0, y: 0, z: 0 } },
+    side: { orbit: { theta: 1.57, phi: 1.2, radius: 6 }, target: { x: 0, y: 0.5, z: 0 } },
+    diagonal: { orbit: { theta: 0.8, phi: 0.9, radius: 7 }, target: { x: 0, y: 0, z: 0 } }
   };
 
   const models = [
@@ -82,7 +82,7 @@
     scene.background = new THREE.Color(0x0a0a0a);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.set(3, 2, 5);
+    camera.position.set(4, 3, 8);
 
     renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(width, height);
