@@ -1608,6 +1608,21 @@ img {
   max-width: 90vw;
   max-height: 90vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-loader {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.lightbox-loader.active {
+  display: flex;
 }
 
 .lightbox-content img {
