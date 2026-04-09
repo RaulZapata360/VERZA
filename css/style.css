@@ -2102,10 +2102,13 @@ img {
   box-sizing: border-box;
 }
 
-.footer-bottom span {
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
+.footer-bottom span:first-child {
+  margin-right: auto;
+}
+
+.footer-bottom span:last-child {
+  white-space: normal;
+  text-align: right;
 }
 
 @media (max-width: 600px) {
@@ -2114,6 +2117,12 @@ img {
     text-align: center;
     justify-content: center;
     gap: 0.5rem;
+  }
+  
+  .footer-bottom span:first-child,
+  .footer-bottom span:last-child {
+    margin-right: 0;
+    text-align: center;
   }
 }
 
