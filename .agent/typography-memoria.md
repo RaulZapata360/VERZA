@@ -2,61 +2,46 @@
 
 ## Actualización: Abril 2026
 
-### Tipografía Principal (Script/Manuscrita)
-- **Fuente actual:** Style Script (Google Fonts)
-- **Variable CSS:** `--font-script`
-- **Aplicada a:** 
-  - Hero: "esencia"
-  - Nosotras: "Verza Design" (Detrás de Verza Design) - `font-family:var(--font-script);font-size:1.1em`
-  - Portafolio: "VERZA" (Proyectos VERZA) - `font-family:var(--font-script);font-size:1.1em`
-  
-### Cómo cambiar la tipografía en el futuro
-
-1. **Cambiar la fuente en index.html** (línea ~15):
-   ```html
-   <link href="https://fonts.googleapis.com/css2?family=NOMBRE_FUENTE&display=swap" rel="stylesheet" />
-   ```
-
-2. **Actualizar la variable CSS en style.css** (línea ~36):
-   ```css
-   --font-script: 'NOMBRE_FUENTE', cursive;
-   ```
-
-3. **Elementos que usan esta tipografía:**
-   - `.handwritten` (clase general para textos script)
-   - Elementos con `style="font-family:var(--font-script)"`
+### Tipografía para Palabras Destacadas (brand-script)
+- **Fuente:** Nothing You Could Do (Google Fonts)
+- **Clase CSS:** `.brand-script`
+- **Aplicada a:** Todas las palabras destacadas del sitio
+- **Color:** hereda del contexto, o se especifica inline (azul: `var(--royal-blue)`, verde: `#DCFF00`)
 
 ---
 
-## Textos con Tipografía Script (handwritten class)
+## Textos con Tipografía Destacada (brand-script)
 
 ### index.html
 
-| Sección | Texto | Línea |
-|---------|-------|-------|
-| Hero | "esencia." | 138 |
-| Nosotras | "diferente." | 242 |
-| Nosotras | "creatividad," | 243 |
-| Nosotras | "intención." | 251 |
-| Proceso | "Proceso" | 423 |
-| Visor 3D | "3D" | 715 |
-| Footer | "amor" | 956 |
+| Sección | Texto | Línea | Color |
+|---------|-------|-------|-------|
+| Hero | "esencia" | 138 | verde (#DCFF00) |
+| Nosotras | "diferente" | 242 | azul (royal-blue) |
+| Nosotras | "creatividad" | 243 | azul (royal-blue) |
+| Nosotras | "intención" | 251 | azul (royal-blue) |
+| Proceso | "Proceso" | 423 | hereda (blanco) |
+| Visor 3D | "3D" | 718 | azul (royal-blue) |
+| Portafolio | "VERZA" | 576 | azul (royal-blue) |
+| Contacto | "espacio" | 770 | hereda |
+| Footer | "amor" | 957 | azul (royal-blue) |
 
 ### galeria.html
 
-| Sección | Texto | Línea |
-|---------|-------|-------|
-| Hero | "Proyectos" | 88 |
-| Contacto | "magia" | 538 |
-| Footer | "amor" | 625 |
+| Sección | Texto | Línea | Color |
+|---------|-------|-------|-------|
+| Hero | "Proyectos" | 88 | verde (#DCFF00) |
+| Contacto | "magia" | 538 | verde (#DCFF00) |
+| Footer | "amor" | 625 | azul (royal-blue) |
 
 ---
 
 ## Notas Importantes
 
-- La tipografía "brand-script" (Nothing You Could Do) ya no se usa activamente
-- La clase `.handwritten` ahora apunta a `--font-script` que es Style Script
-- Para textos especiales como "Verza Design" en Nosotras, se usa directamente `style="font-family:var(--font-script)"` en lugar de la clase
+- La clase `.handwritten` ya no se usa para palabras destacadas
+- Todas las palabras destacadas ahora usan `.brand-script` (Nothing You Could Do)
+- El tamaño recomendado es `font-size:1.1em` para mantener consistencia
+- Colores se mantienen inline donde estaban definidos
 
 ---
 
@@ -64,4 +49,8 @@
 
 | Fecha | Cambio |
 |-------|--------|
-| Abril 2026 | Cambio de Dancing Script a Style Script como tipografía principal |
+| Abril 2026 | Unificación a Nothing You Could Do para todas las palabras destacadas |
+| Abril 2026 | Proceso "Proceso" sin color (hereda blanco del fondo) |
+| Abril 2026 | Visor 3D "3D" en color azul |
+| Abril 2026 | Portafolio "VERZA" en brand-script con azul |
+| Abril 2026 | Footer-bottom corregido para mostrar todo el texto |
