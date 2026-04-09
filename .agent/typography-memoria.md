@@ -6,22 +6,7 @@
 - **Fuente:** Nothing You Could Do (Google Fonts)
 - **Clase CSS:** `.brand-script`
 - **Aplicada a:** Todas las palabras destacadas del sitio
-
-### Cómo cambiar la tipografía en el futuro
-
-1. **Cambiar la fuente en index.html** (línea ~15):
-   ```html
-   <link href="https://fonts.googleapis.com/css2?family=NOMBRE_FUENTE&display=swap" rel="stylesheet" />
-   ```
-
-2. **Actualizar la variable CSS en style.css** (línea ~37):
-   ```css
-   --font-brand-script: 'NOMBRE_FUENTE', cursive;
-   ```
-
-3. **Elementos que usan esta tipografía:**
-   - `.brand-script` (clase para palabras destacadas)
-   - Elementos con `style="font-family:var(--font-brand-script)"`
+- **Color:** hereda del contexto, o se especifica inline (azul: `var(--royal-blue)`, verde: `#DCFF00`)
 
 ---
 
@@ -31,14 +16,15 @@
 
 | Sección | Texto | Línea | Color |
 |---------|-------|-------|-------|
-| Hero | "esencia" | 138 | heredado |
-| Nosotras | "diferente" | 242 | heredado |
-| Nosotras | "creatividad" | 243 | heredado |
-| Nosotras | "intención" | 251 | heredado |
-| Proceso | "Proceso" | 423 | heredado (sin azul) |
+| Hero | "esencia" | 138 | verde (#DCFF00) |
+| Nosotras | "diferente" | 242 | azul (royal-blue) |
+| Nosotras | "creatividad" | 243 | azul (royal-blue) |
+| Nosotras | "intención" | 251 | azul (royal-blue) |
+| Proceso | "Proceso" | 423 | hereda (blanco) |
 | Visor 3D | "3D" | 718 | azul (royal-blue) |
-| Contacto | "espacio" | 770 | heredado |
-| Footer | "amor" | 959 | azul (royal-blue) |
+| Portafolio | "VERZA" | 576 | azul (royal-blue) |
+| Contacto | "espacio" | 770 | hereda |
+| Footer | "amor" | 957 | azul (royal-blue) |
 
 ### galeria.html
 
@@ -63,6 +49,8 @@
 
 | Fecha | Cambio |
 |-------|--------|
-| Abril 2026 | Cambio de Style Script a Nothing You Could Do para todas las palabras destacadas |
-| Abril 2026 | Proceso "Proceso" sin color azul |
+| Abril 2026 | Unificación a Nothing You Could Do para todas las palabras destacadas |
+| Abril 2026 | Proceso "Proceso" sin color (hereda blanco del fondo) |
 | Abril 2026 | Visor 3D "3D" en color azul |
+| Abril 2026 | Portafolio "VERZA" en brand-script con azul |
+| Abril 2026 | Footer-bottom corregido para mostrar todo el texto |
